@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html>
-
 <head>
     <title>FORMULAIRE INSCRIPTION</title>
     <meta charset="utf-8">
@@ -63,8 +61,7 @@
                 $info_paiement = $_POST['info_paiement'];
 
                 
-				
-				
+							
 
                 // Autres opérations à effectuer avec les données
             } else {
