@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   color: black;
+  text-align: center;
 }
 
 .footer {
@@ -23,14 +24,6 @@ html, body {
   z-index: 9999;
 }
 
-header {
-  text-align: center;
-}
-
-nav {
-  text-align: center;
-}
-
 nav ul li {
   display: inline;
   margin-right: 50px;
@@ -44,6 +37,19 @@ nav ul li a {
   border-radius: 20px;
 }
 
-section {
+section{
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  text-align: justify;
+}
 
+p{
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
 }
