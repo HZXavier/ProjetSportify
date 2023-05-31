@@ -1,0 +1,64 @@
+-- Création de la table Coach
+CREATE TABLE Coach (
+    ID_COACH INT PRIMARY KEY,
+    Nom VARCHAR(50),
+    Prenom VARCHAR(50),
+    Photo VARCHAR(100),
+    Mail VARCHAR(100),
+    Specialite VARCHAR(50),
+    Video VARCHAR(100),
+    CV VARCHAR(100),
+    ID_Jour VARCHAR(50),
+    ID_Dossier_COACH VARCHAR(50),
+    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour),
+    FOREIGN KEY (ID_Dossier_COACH) REFERENCES ID_Dossier_COACH(ID_Dossier_COACH)
+);
+
+-- Création de la table Client
+CREATE TABLE Client (
+    ID_Client INT PRIMARY KEY,
+    Mail VARCHAR(100),
+    MotDePasse VARCHAR(100),
+    Nom VARCHAR(50),
+    Prenom VARCHAR(50),
+    ID_InfoPayment INT,
+    ID_Dossier_CLIENT INT,
+    FOREIGN KEY (ID_InfoPayment) REFERENCES InfoPayment(ID_InfoPayment),
+    FOREIGN KEY (ID_Dossier_CLIENT) REFERENCES Dossier_CLIENT(ID_Dossier_CLIENT)
+);
+
+-- Création de la table InfoPayment
+CREATE TABLE InfoPayment (
+    ID_InfoPayment INT PRIMARY KEY,
+    Infos VARCHAR(100)
+);
+
+-- Création de la table Jour
+CREATE TABLE Jour (
+    ID_Jour INT PRIMARY KEY,
+    Heure INT,
+    Occupe INT,
+    ID_COACH INT,
+    FOREIGN KEY (ID_COACH) REFERENCES Coach(ID_COACH)
+);
+
+-- Création de la table DossierCOACH
+CREATE TABLE Dossier_COACH (
+    ID_Dossier_COACH INT PRIMARY KEY,
+    NJour VARCHAR(50),
+    ID_Client INT,
+    ID_Jour INT,
+    FOREIGN KEY (ID_Client) REFERENCES Coach(ID_Client),
+    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour)
+);
+
+-- Création de la table DossierCLIENT
+CREATE TABLE Dossier_CLIENT (
+    ID_Dossier_CLIENT INT PRIMARY KEY,
+    NJour VARCHAR(50),
+    ID_COACH INT,
+    ID_Jour INT,
+    FOREIGN KEY (ID_COACH) REFERENCES Client(ID_COACH),
+    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour)
+);
+
