@@ -76,3 +76,21 @@ img{
 .contenu-volet {
   padding: 10px;
 }
+
+th, td {
+  background-color: #FFEFD5;
+  padding: 20px;
+}
+
+.coord_gerant {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nom_gerant {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
