@@ -6,22 +6,13 @@
 </head>
 
 <body>
-  <div class="wrapper"> <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<title>COMPTE</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
   <div class="wrapper"> 
 
     <header>
       <h1><br>SPORTIFY : Consultation Sportive</h1>
       <a href="Page_accueil.html">
         <img src="logo.png" width="200" height="100" style="position: absolute; top: 6%; right: 8%; border-radius: 10px;">
-          <br>
-      </a>
+      <br></a>
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
@@ -35,61 +26,32 @@
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
-  	<p>VOTRE COMPTE</p>
+
+  	<p>VOTRE COMPTE</p><br><br><br>
+
+
     <form action="page_mdp.php" method="post">
+      <choix_id style="display: flex; justify-content: center;">
+          <input type="radio" name="user-type" value="client" required>
+          Client&nbsp;&nbsp;&nbsp;
+
+          <input type="radio" name="user-type" value="coach" required>
+          Coach&nbsp;&nbsp;&nbsp;
+
+          <input type="radio" name="user-type" value="admin" required>
+          Administrateur&nbsp;&nbsp;&nbsp;
+      </choix_id>
+      <br><br>
       <label for="username">Identifiant :</label>
-      <input type="text" name="username" id="username" required ><br>
-
-      <label for="password">Mot de passe :</label>
-      <input type="password" name="password" id="password" required><br>
-
-      <input type="submit" value="Se connecter">
-    </form>
-
-    <br><br>
-    <footer class="footer">
-      <p1>Nous contacter :<br><u>+33 6 61 48 19 96</u>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 
-        <a href="mailto:xavier.heitz@edu.ece.fr">xavier.heitz@edu.ece.fr</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-        <a href="https://maps.google.com/maps?q=66 rue des Champarons, 92700, Colombes" target="_blank">
-        66 rue des Champarons, 92700, Colombes</a><br>
-        &copy;2023 Sportify</p1>
-    </footer>
-
-    </div>
-
-</body>
-</html>
-
-    <header>
-      <h1><br>SPORTIFY : Consultation Sportive</h1>
-      <a href="Page_accueil.html">
-        <img src="logo.png" width="200" height="100" style="position: absolute; top: 6%; right: 8%; border: 2px solid black; border-radius: 10px;">
-          <br>
-      </a>
-      <div class="line" style="height: 3px; background-color: darkblue;"></div>
+      <input type="text" name="username" id="username" required><br>
       <br>
-    </header>
-
-	 <nav>
-      <ul>
-        <li><a href="accueil.html">Accueil</a></li>
-        <li><a href="parcourir.html">Tout Parcourir</a></li>
-        <li><a href="recherche.html">Recherche</a></li>
-        <li><a href="rendez_vous.html">Rendez-vous</a></li>
-        <li><a href="compte.html">Votre Compte</a></li>
-      </ul><br>
-      <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
-    </nav>
-  	<p>VOTRE COMPTE</p>
-    <form action="page_mdp.php" method="post">
-      <label for="username">Identifiant :</label>
-      <input type="text" name="username" id="username" required ><br>
-
       <label for="password">Mot de passe :</label>
       <input type="password" name="password" id="password" required><br>
-
+      <br>
       <input type="submit" value="Se connecter">
     </form>
+
+
 
     <br><br>
     <footer class="footer">
