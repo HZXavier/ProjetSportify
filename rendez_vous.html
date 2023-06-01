@@ -27,7 +27,35 @@
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
-    <p>PRENEZ RENDEZ VOUS</p>
+    <p>PRENEZ RENDEZ VOUS</p><br>
+
+    <form>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="coach">Coach :</label>
+    <select id="coach" name="coach">
+      <option value="arnold">Arnold</option>
+      <option value="camille">Camille</option>
+      <option value="edouard">Edouard</option>
+      <option value="jean">Jean</option>
+    </select>
+
+    <label for="date">Date :</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="heure">Heure :</label>
+    <input type="time" id="heure" name="heure" required>
+
+    <label for="activite">Activité :</label>
+    <select id="activite" name="activite">
+      <option value="tennis">Tennis</option>
+      <option value="basketball">Basketball</option>
+      <option value="fitness">Fitness</option>
+    </select>
+
+    <input type="submit" value="Envoyer">
+  </form>
 
     <br><br>
     <footer class="footer">
