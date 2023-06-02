@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJOUTER </title>
+</head>
+<body>
+
+  <div class="wrapper"> 
+
+    <header>
+      <h1><br>SPORTIFY : Consultation Sportive</h1>
+      <a href="Page_accueil.html">
+        <img src="logo.png" width="200" height="100" style="position: absolute; top: 6%; right: 8%; border-radius: 10px;">
+      <br></a>
+      <div class="line" style="height: 3px; background-color: darkblue;"></div>
+      <br><br>
+    </header>
+
+   <nav>
+        <li><a href="Page_accueil.html">Accueil</a></li>
+        <li><a href="parcourir.html">Tout Parcourir</a></li>
+        <li><a href="recherche.html">Recherche</a></li>
+        <li><a href="rendez_vous.html">Rendez-vous</a></li>
+        <li><a href="compte.html">Votre Compte</a></li>
+      <br><br><br>
+      <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
+    </nav>
+
+    <p>AJOUT D'UNE NOUVELLE PERSONNE</p><br><br><br>
+
+    <form method="POST" action="ajouter.php">
+      <choix_id style="display: flex; justify-content: center;">
+          <input type="radio" name="user_type" value="client" required>Client&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="user_type" value="coach" required>Coach&nbsp;&nbsp;&nbsp;
+      </choix_id><br><br>
+
+
+
+      <input type="text" name="nom" placeholder="Nom :">
+      <input type="text" name="prenom" placeholder="Prenom :">
+      <input type="mail" name="mail" placeholder="Mail :">
+      <input type="text" name="mot_de_passe" placeholder="Mot de passe :">
+      <input type="text" name="adresse" placeholder="adresse :">
+      <input type="text" name="ville" placeholder="ville :">
+      <input type="text" name="pays" placeholder="pays :">
+      <input type="text" name="code_postal" placeholder="code_postal :">
+
+      <button type="submit">inscrire</button>
+    </form>
+    
+
+
+    <br><br>
+    <footer class="footer">
+      <p1>Nous contacter :<br><u>+33 6 61 48 19 96</u>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 
+        <a href="mailto:xavier.heitz@edu.ece.fr">xavier.heitz@edu.ece.fr</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+        <a href="https://maps.google.com/maps?q=66 rue des Champarons, 92700, Colombes" target="_blank">
+        66 rue des Champarons, 92700, Colombes</a><br>
+        &copy;2023 Sportify</p1>
+    </footer>
+
+    </div>
+
+</body>
+</html>
