@@ -1,64 +1,82 @@
+-- Création de la base de données
+CREATE DATABASE FitnessSportify;
+
+-- Utilisation de la base de données
+USE FitnessSportify;
+
+-- Création de la table Administrateur
+CREATE TABLE Administrateur (
+    Id_Admin INT PRIMARY KEY,
+    Nom VARCHAR(50),
+    Prénom VARCHAR(50),
+    Mail VARCHAR(50),
+    Mdp VARCHAR(50)
+);
+
 -- Création de la table Coach
 CREATE TABLE Coach (
-    ID_COACH INT PRIMARY KEY,
+    Id_Coach INT PRIMARY KEY,
     Nom VARCHAR(50),
-    Prenom VARCHAR(50),
-    Photo VARCHAR(100),
-    Mail VARCHAR(100),
-    Specialite VARCHAR(50),
-    Video VARCHAR(100),
-    CV VARCHAR(100),
-    ID_Jour VARCHAR(50),
-    ID_Dossier_COACH VARCHAR(50),
-    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour),
-    FOREIGN KEY (ID_Dossier_COACH) REFERENCES ID_Dossier_COACH(ID_Dossier_COACH)
+    Prénom VARCHAR(50),
+    Mail VARCHAR(50),
+    Mdp VARCHAR(50),
+    Photo VARCHAR(50),
+    Spécialité VARCHAR(50),
+    Vidéo VARCHAR(50),
+    CV VARCHAR(50),
+    Téléphone VARCHAR(50),
+    Disponible BOOLEAN
 );
 
 -- Création de la table Client
 CREATE TABLE Client (
-    ID_Client INT PRIMARY KEY,
-    Mail VARCHAR(100),
-    MotDePasse VARCHAR(100),
+    Id_Client INT PRIMARY KEY,
     Nom VARCHAR(50),
-    Prenom VARCHAR(50),
-    ID_InfoPayment INT,
-    ID_Dossier_CLIENT INT,
-    FOREIGN KEY (ID_InfoPayment) REFERENCES InfoPayment(ID_InfoPayment),
-    FOREIGN KEY (ID_Dossier_CLIENT) REFERENCES Dossier_CLIENT(ID_Dossier_CLIENT)
+    Prénom VARCHAR(50),
+    Mail VARCHAR(50),
+    Mdp VARCHAR(50),
+    Adresse VARCHAR(50),
+    Carte_Etd VARCHAR(50),
+    Code_Postal INT,
+    Ville VARCHAR(50),
+    Pays VARCHAR(50)
 );
 
--- Création de la table InfoPayment
-CREATE TABLE InfoPayment (
-    ID_InfoPayment INT PRIMARY KEY,
-    Infos VARCHAR(100)
+-- Création de la table Carte bancaire
+CREATE TABLE Carte_Bancaire (
+    Numéro_Carte INT PRIMARY KEY,
+    Date_exp DATE,
+    Cryptogramme INT,
+    Nom_Titulaire VARCHAR(50),
+    Id_Client INT,
+    FOREIGN KEY (Id_Client) REFERENCES Client(Id_Client)
 );
 
--- Création de la table Jour
-CREATE TABLE Jour (
-    ID_Jour INT PRIMARY KEY,
-    Heure INT,
-    Occupe INT,
-    ID_COACH INT,
-    FOREIGN KEY (ID_COACH) REFERENCES Coach(ID_COACH)
+-- Création de la table Salle
+CREATE TABLE Salle (
+    Id_Salle INT PRIMARY KEY,
+    Nom VARCHAR(50),
+    Adresse VARCHAR(50),
+    Téléphone VARCHAR(50)
 );
 
--- Création de la table DossierCOACH
-CREATE TABLE Dossier_COACH (
-    ID_Dossier_COACH INT PRIMARY KEY,
-    NJour VARCHAR(50),
-    ID_Client INT,
-    ID_Jour INT,
-    FOREIGN KEY (ID_Client) REFERENCES Coach(ID_Client),
-    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour)
+-- Création de la table Sport
+CREATE TABLE Sport (
+    Id_Activité INT PRIMARY KEY,
+    Nom VARCHAR(50),
+    Id_Coach INT,
+    FOREIGN KEY (Id_Coach) REFERENCES Coach(Id_Coach)
 );
 
--- Création de la table DossierCLIENT
-CREATE TABLE Dossier_CLIENT (
-    ID_Dossier_CLIENT INT PRIMARY KEY,
-    NJour VARCHAR(50),
-    ID_COACH INT,
-    ID_Jour INT,
-    FOREIGN KEY (ID_COACH) REFERENCES Client(ID_COACH),
-    FOREIGN KEY (ID_Jour) REFERENCES Jour(ID_Jour)
+-- Création de la table Planning
+CREATE TABLE Planning (
+    Id_Planning INT PRIMARY KEY,
+    Jour VARCHAR(50),
+    Heure_Début TIME,
+    Heure_Fin TIME,
+    Occupé BOOLEAN,
+    Id_Client INT,
+    Id_Coach INT,
+    FOREIGN KEY (Id_Client) REFERENCES Client(Id_Client),
+    FOREIGN KEY (Id_Coach) REFERENCES Coach(Id_Coach)
 );
-
