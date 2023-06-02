@@ -29,31 +29,17 @@
 
   	<p>VOTRE COMPTE</p><br><br><br>
 
-
-    <form action="page_mdp.php" method="post">
+    <form method="POST" action="compte_coach.php">
       <choix_id style="display: flex; justify-content: center;">
-          <input type="radio" name="user-type" value="client" required>
-          Client&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="user-type" value="coach" required>
-          Coach&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="user-type" value="admin" required>
-          Administrateur&nbsp;&nbsp;&nbsp;
-      </choix_id>
-      <br><br>
-      <label for="username">Nom :</label>
-      <input type="text" name="username" id="username" required><br>
-      <br>
-      <label for="username">Prénom :</label>
-      <input type="text" name="username" id="username" required><br>
-      <br>
-      <label for="password">Adresse mail :</label>
-      <input type="password" name="password" id="password" required><br>
-      <br>
-      <a href="compte_coach.php">Se connecter</a>
+          <input type="radio" name="user_type" value="client" required>Client&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="user_type" value="coach" required>Coach&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="user_type" value="admin" required>Administrateur
+      </choix_id><br><br>
+      <input type="text" name="nom" placeholder="Nom :">
+      <input type="text" name="prenom" placeholder="Prenom :">
+      <input type="mail" name="mail" placeholder="Mail :">
+      <button type="submit">Se connecter</button>
     </form>
-
 
 
     <br><br>
