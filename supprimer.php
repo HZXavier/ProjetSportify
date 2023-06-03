@@ -11,20 +11,23 @@
 
     <header>
       <h1><br>SPORTIFY : Consultation Sportive</h1>
-      <a href="Page_accueil.html">
+      <a href="accueil.php">
         <img src="logo.png" width="200" height="100" style="position: absolute; top: 6%; right: 8%; border-radius: 10px;">
       <br></a>
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
+    <?php     session_start(); ?>
 
    <nav>
-        <li><a href="Page_accueil.html">Accueil</a></li>
-        <li><a href="parcourir.html">Tout Parcourir</a></li>
-        <li><a href="recherche.html">Recherche</a></li>
-        <li><a href="rendez_vous.html">Rendez-vous</a></li>
-        <li><a href="compte.html">Votre Compte</a></li>
-        <li><a href="ajouter.html">inscrire</a></li>
+        <li><a href="accueil.php">Accueil</a></li>
+        <li><a href="parcourir.php">Tout Parcourir</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <li><a href="rendez_vous.php">Rendez-vous</a></li>
+        <li><a href="compte.php">Votre Compte</a></li>
+        <li><a href="ajouter.php">Inscrire</a></li>
+
+        <li><a href="supprimer.php">Supprimer</a></li>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
@@ -56,8 +59,6 @@
     if (!$connexion) {
         die("Erreur de connexion à la base de données : " . mysqli_connect_error());
     }
-
-    session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userType = $_POST["user_type"];

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,29 +10,33 @@
 	<div class="wrapper">
 		<header>
 	      <h1><br>SPORTIFY : Consultation Sportive</h1>
-	      <a href="Page_accueil.html">
+	      <a href="accueil.php">
 	        <img src="logo.png" width="200" height="100"
 	        	style="position: absolute; top: 6%; right: 8%; border-radius: 10px;">
 	      <br></a>
 	      <div class="line" style="height: 3px; background-color: darkblue;"></div>
 	      <br><br>
 	    </header>
+      <?php     session_start(); ?>
 
 	    <nav>
-        <li><a href="Page_accueil.html">Accueil</a></li>
-        <li><a href="parcourir.html">Tout Parcourir</a></li>
-        <li><a href="recherche.html">Recherche</a></li>
-        <li><a href="rendez_vous.html">Rendez-vous</a></li>
-        <li><a href="compte.html">Votre Compte</a></li>
+        <li><a href="accueil.php">Accueil</a></li>
+        <li><a href="parcourir.php">Tout Parcourir</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <li><a href="rendez_vous.php">Rendez-vous</a></li>
+        <li><a href="compte.php">Votre Compte</a></li>
+        <li><a href="ajouter.php">Inscrire</a></li>
+
+        <li><a href="supprimer.php">Supprimer</a></li>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
-    	</nav>
+    </nav>
 
 	    <p>DECOUVREZ NOUS EN PARCOURANT NOTRE SITE</p>
 	    <br><nav>
-	        <li><a href="activites_sport.html">ACTIVITES SPORTIVES</a></li>
-	        <li><a href="sports_compet.html">LES SPORTS DE COMPETITION</a></li>
-	        <li><a href="salle_sport.html">SALLE DE SPORT OMNES</a></li>
+	        <li><a href="activites_sport.php">ACTIVITES SPORTIVES</a></li>
+	        <li><a href="sports_compet.php">LES SPORTS DE COMPETITION</a></li>
+	        <li><a href="salle_sport.php">SALLE DE SPORT OMNES</a></li>
 	    </nav><br>
 	    <br><div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
 	    <h2>NOS SPORTS DE COMPETITION</h2><br><br>
@@ -62,9 +65,9 @@ En conclusion, le football présente de nombreux bienfaits pour la santé physiq
         <img class="centered"src="ragnar.png"  width="450" height="562"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
       <p style="text-align: justify;">
          RAGNAR BRETON<br><br>
@@ -133,53 +136,16 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
       <img class="centered"src="florent.png"  width="450" height="298"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
-      
       <p style="text-align: justify;"><br>
-
-      <?php
-      // Informations de connexion à la base de données
-      $serveur = "localhost";
-      $utilisateur = "root";
-      $motDePasse = "";
-      $baseDeDonnees = "sportify";
-
-      // Connexion à la base de données
-      $connexion = mysqli_connect($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-      // Vérifier la connexion
-      if (!$connexion) {
-          die("Erreur de connexion à la base de données : " . mysqli_connect_error());
-      }
-      
-      // ID du coach
-      $idCoach = 1; // Remplacez cette valeur par l'ID du coach que vous souhaitez afficher le planning
-
-      // Requête pour récupérer le coach
-      $requete = "SELECT * FROM coach WHERE ID_COACH = $idCoach";
-      $resultat = mysqli_query($connexion, $requete);
-
-      // Vérifier s'il y a des résultats
-      if (mysqli_num_rows($resultat) > 0) {
-          // Parcourir les résultats et afficher les informations
-          while ($row = mysqli_fetch_assoc($resultat)) {
-              $nom = $row["Nom"];
-              $prenom = $row["Prenom"];
-              $mail = $row["Mail"];
-
-              echo "Nom : $nom<br>";
-              echo "Prénom : $prenom<br>";
-              echo "Email : $mail<br>";
-              echo "<br>";
-          }
-      } else {
-          echo "Aucun résultat trouvé.";
-      }
-      ?>
-      <br><br>
+FLORENT MANAUDOU<br>
+32 ans | Professeur de natation<br>
+Adresse : 12 impasse des bassins<br>
+Téléphone : +33620268312<br>
+Email : <a href="mailto:flo.piscine@sportomnes.fr">flo.piscine@sportomnes.fr</a><br><br>
 
 
 
@@ -239,9 +205,9 @@ Enfin, le tennis est un excellent moyen de réduire le stress et de favoriser le
       <img class="centered"src="pierre_menes.png"  width="600" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
       <p style="text-align: justify;">PIERRE MÈNES<br><br>
 Coach de Tennis | 56 ans<br>
@@ -307,9 +273,9 @@ En conclusion, le basketball offre une multitude de bienfaits pour la santé phy
       <img class="centered"src="nain_indien.png"  width="450" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
       <p style="text-align: justify;">TANGUY INDIE<br><br>
 Coach Basketball | 14 ans<br>
@@ -358,9 +324,9 @@ COMPÉTENCES<br><br>
       <img class="centered"src="nain.png"  width="250" height="281"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
       <p style="text-align: justify;">ROMAIN PETIT<br><br>
 Coach plongeon | 33 ans<br>
@@ -426,10 +392,12 @@ En conclusion, le rugby offre une multitude de bienfaits pour la santé physique
       <img class="centered"src="chabal.png"  width="450" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.html">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
-        <li><a href="discuter.html">DISCUTER</a></li>
+        <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
+
+      
       <p style="text-align: justify;">SEBASTIEN CHABAL<br><br>
 
 45 ans | Professeur de rugby<br>
