@@ -1,8 +1,8 @@
 -- Création de la base de données
-CREATE DATABASE FitnessSportify;
+CREATE DATABASE Fitness;
 
 -- Utilisation de la base de données
-USE FitnessSportify;
+USE Fitness;
 
 -- Création de la table Administrateur
 CREATE TABLE Administrateur (
