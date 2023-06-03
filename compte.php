@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //client
-    if($userType == 'client'){
+    else if($userType == 'client'){
         $requete = "SELECT * FROM client WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
         $resultat = mysqli_query($connexion, $requete);
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //admin
-    if($userType == 'admin'){
+    else if($userType == 'admin'){
         $requete = "SELECT * FROM administrateur
          WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
         $resultat = mysqli_query($connexion, $requete);
@@ -81,5 +81,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 else{
     echo "marche pas";
 }
-mysqli_close($db_handle);
+
 ?>
