@@ -28,7 +28,6 @@
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
         <li><a href="compte.php">Votre Compte</a></li>
         <li><a href="ajouter.php">Inscrire</a></li>
-
         <li><a href="supprimer.php">Supprimer</a></li>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
