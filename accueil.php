@@ -24,7 +24,7 @@
     <nav>
         <li><a href="accueil.php">Accueil</a></li>
         <li><a href="parcourir.php">Tout Parcourir</a></li>
-        <li><a href="recherche.php">Recherche</a></li>
+        <li><a href="recherche.html">Recherche</a></li>
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
         <li><a href="compte.php">Votre Compte</a></li>
         <li><a href="ajouter.php">Inscrire</a></li>
