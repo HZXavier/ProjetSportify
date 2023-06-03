@@ -1,6 +1,6 @@
 <?php
 // Informations de connexion à la base de données
-$baseDeDonnees = "sportify";
+$baseDeDonnees = "fitness";
 
 // Connexion à la base de données
 $connexion = mysqli_connect('localhost', 'root', '',$baseDeDonnees);
