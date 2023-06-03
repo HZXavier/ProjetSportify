@@ -30,6 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POS
             // Mettre à jour le créneau
             $requeteMiseAJour = "UPDATE planning SET Occupé = 1 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
             mysqli_query($connexion, $requeteMiseAJour);
+        } else {
+            // Annuler le rendez-vous
+            $requeteAnnulation = "UPDATE planning SET Occupé = 0 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+            mysqli_query($connexion, $requeteAnnulation);
         }
     }
 }
@@ -93,7 +97,7 @@ if (mysqli_num_rows($resultat) > 0) {
             if (!$occupe) {
                 echo "<td><button onclick='prendreRendezVous(\"$jour\", \"$heureDebut\")'>Réserver</button></td>";
             } else {
-                echo "<td>$occupation</td>";
+                echo "<td>$occupation<br/><button onclick='annulerRendezVous(\"$jour\", \"$heureDebut\")'>Annuler</button></td>";
             }
 
         }
@@ -113,6 +117,20 @@ function prendreRendezVous(jour, heure) {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 location.reload(); // Actualiser la page après la réservation
+            }
+        };
+        xhttp.open("POST", "", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("jour=" + jour + "&heure=" + heure);
+    }
+}
+
+function annulerRendezVous(jour, heure) {
+    if (confirm("Voulez-vous annuler ce rendez-vous ?")) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                location.reload(); // Actualiser la page après l'annulation
             }
         };
         xhttp.open("POST", "", true);
