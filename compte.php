@@ -61,6 +61,7 @@
 
         // coach
         if($userType == 'coach'){
+          $_SESSION=['coach'];
             $requete = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
@@ -81,6 +82,7 @@
 
         //client
         if($userType == 'client'){
+          $_SESSION=['client'];
             $requete = "SELECT * FROM client WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
@@ -101,8 +103,8 @@
 
         //admin
         if($userType == 'admin'){
-            $requete = "SELECT * FROM administrateur
-             WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
+          $_SESSION=['admin'];
+            $requete = "SELECT * FROM administrateur  WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
             if (mysqli_num_rows($resultat) > 0) {

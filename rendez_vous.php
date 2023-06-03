@@ -17,6 +17,8 @@
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
+    
+    <?php     session_start(); ?>
 
    <nav>
         <li><a href="accueil.php">Accueil</a></li>
