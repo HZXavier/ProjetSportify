@@ -17,18 +17,31 @@
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
-    <?php     session_start(); ?>
+    <?php     session_start(); 
+    if (isset($_SESSION['profil'])) {
+        echo 'qqun est co';        
+    }
+    else{
+        echo 'personne n\'est co';
+    }
+    ?>
     
 
 
     <nav>
         <li><a href="accueil.php">Accueil</a></li>
         <li><a href="parcourir.php">Tout Parcourir</a></li>
-        <li><a href="recherche.html">Recherche</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <!--que les clients-->
+        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'client'): ?>
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
+        <?php endif ?>
+        <!--que si personne n'est co-->
         <li><a href="compte.php">Votre Compte</a></li>
-        <li><a href="ajouter.php">Inscrire</a></li>
+        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'admin'): ?>
+        <li><a href="ajouter.php">Inscrire</a></li>        
         <li><a href="supprimer.php">Supprimer</a></li>
+            <?php endif ?>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>

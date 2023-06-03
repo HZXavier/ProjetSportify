@@ -16,16 +16,30 @@
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
-    <?php     session_start(); ?>
+    <?php     session_start(); 
+    if (isset($_SESSION['profil'])) {
+        echo 'qqun est co';        
+    }
+    else{
+        echo 'personne n\'est co';
+    }
+    ?>
 
    <nav>
         <li><a href="accueil.php">Accueil</a></li>
         <li><a href="parcourir.php">Tout Parcourir</a></li>
-        <li><a href="recherche.html">Recherche</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <!--que les clients-->
+        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'client'): ?>
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
+        <?php endif ?>
+        <!--que si personne n'est co-->
         <li><a href="compte.php">Votre Compte</a></li>
-        <li><a href="ajouter.php">Inscrire</a></li>
+        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'admin'): ?>
+        <li><a href="ajouter.php">Inscrire</a></li>        
         <li><a href="supprimer.php">Supprimer</a></li>
+            <?php endif ?>
+        <li><a href="deconnexion.php">SE DECO</a></li>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
@@ -61,7 +75,7 @@
 
         // coach
         if($userType == 'coach'){
-          $_SESSION=['coach'];
+            $_SESSION['profil'] = 'coach';
             $requete = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
@@ -72,7 +86,7 @@
                 $_SESSION["Mail"] = $mail;
                 $_SESSION["Nom"] = $nom;
                 $_SESSION["Prenom"] = $prenom;
-                echo "Connexion réussie bienvenue coach $prenom";
+                
 
                 // Redirection vers la page réservée aux coachs
                 exit();
@@ -82,7 +96,7 @@
 
         //client
         if($userType == 'client'){
-          $_SESSION=['client'];
+            $_SESSION['profil'] = 'client';
             $requete = "SELECT * FROM client WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
@@ -93,7 +107,7 @@
                 $_SESSION["Mail"] = $mail;
                 $_SESSION["Nom"] = $nom;
                 $_SESSION["Prenom"] = $prenom;
-                echo "Connexion client réussie bienvenue $prenom";
+                
                 
                 // Redirection vers la page réservée aux clients
                 exit();
@@ -103,8 +117,9 @@
 
         //admin
         if($userType == 'admin'){
-          $_SESSION=['admin'];
-            $requete = "SELECT * FROM administrateur  WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
+            $_SESSION['profil'] = 'admin';
+            $requete = "SELECT * FROM administrateur
+             WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
             if (mysqli_num_rows($resultat) > 0) {
@@ -114,7 +129,7 @@
                 $_SESSION["Mail"] = $mail;
                 $_SESSION["Nom"] = $nom;
                 $_SESSION["Prenom"] = $prenom;
-                echo "Connexion administrateur réussie bienvenue $prenom";
+                
                 
                 // Redirection vers la page réservée aux clients
                 exit();
