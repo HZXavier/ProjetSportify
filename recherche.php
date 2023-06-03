@@ -30,6 +30,7 @@ foreach ($tables as $table) {
     }
 }
 
+echo "Résultats de la recherche : <br><br>";
 foreach ($resultats as $resultat) {
     foreach ($resultat as $colonne => $valeur) {
         echo $colonne . ": " . $valeur . "<br>";
