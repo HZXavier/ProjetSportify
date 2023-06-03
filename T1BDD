@@ -73,7 +73,7 @@ CREATE TABLE Planning (
     Id_Planning INT PRIMARY KEY,
     Jour VARCHAR(50),
     Heure_Début VARCHAR(50),
-    Heure_Fin TIME VARCHAR(50),
+    Heure_Fin VARCHAR(50),
     Occupé BOOLEAN,
     Id_Client INT,
     Id_Coach INT,
