@@ -6,33 +6,32 @@
 </head>
 <body>
 	
-	<div class="wrapper">
+	<div class="wrapper"> 
+
     <header>
       <h1><br>SPORTIFY : Consultation Sportive</h1>
       <a href="Page_accueil.html">
         <img src="logo.png" width="200" height="100" style="position: absolute; top: 6%; right: 8%; border-radius: 10px;">
-          <br>
-      </a>
+      <br></a>
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
-		
-    <nav>
-      <ul>
+
+   <nav>
         <li><a href="Page_accueil.html">Accueil</a></li>
         <li><a href="parcourir.html">Tout Parcourir</a></li>
         <li><a href="recherche.html">Recherche</a></li>
         <li><a href="rendez_vous.html">Rendez-vous</a></li>
         <li><a href="compte.html">Votre Compte</a></li>
-      </ul>
+      <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
-    <p>Faites vos recherches</p><br>
-    
 
-    <form action="/rechercher" method="GET">
-    <input type="text" name="q" placeholder="Rechercher...">
-    <button type="submit">Rechercher</button>
+
+
+  <form method="POST" action="recherche.php">
+      <input type="text" name="texte_recherche" placeholder="Rechercher...">
+      <button type="submit">Rechercher</button>
   </form>
 
   <br><br>
