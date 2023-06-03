@@ -8,7 +8,7 @@
     $servername = "localhost";
     $username = "nom_utilisateur";
     $password = "mot_de_passe";
-    $database = "SPORTIFY";
+    $database = "fitness";
 
 
     //connexion à la base de donnees
