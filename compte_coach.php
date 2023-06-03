@@ -1,9 +1,9 @@
 <?php
 // Informations de connexion à la base de données
-$baseDeDonnees = "fitness";
+$baseDeDonnees = "sportify";
 
 // Connexion à la base de données
-$connexion = mysqli_connect('localhost', 'root', '',$baseDeDonnees);
+$connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
 // Vérifier la connexion
 if (!$connexion) {
@@ -19,70 +19,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prenom = $_POST["prenom"];
 
     // coach
-    if($userType == 'coach'){
+    if ($userType == 'coach') {
         $requete = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
         $resultat = mysqli_query($connexion, $requete);
+      
 
-        if (mysqli_num_rows($resultat) > 0) {
+        if ($resultat && mysqli_num_rows($resultat) > 0) {
             // Les champs correspondent, on crée la session coach
             $coach = mysqli_fetch_assoc($resultat);
-            $_SESSION["Coach"] = true;
+            $_SESSION["coach"] = true;
             $_SESSION["Mail"] = $mail;
             $_SESSION["Nom"] = $nom;
             $_SESSION["Prenom"] = $prenom;
-            echo "Connexion réussie bienvenue coach $prenom";
+            echo "Connexion réussie, bienvenue coach $prenom";
 
             // Redirection vers la page réservée aux coachs
             exit();
+        } else {
+            echo "Vous n'êtes pas enregistré dans la base de données des coachs.";
         }
-        echo "Vous n'êtes pas enregistré dans la base de données des coachs.";
     }
 
     //client
-    if($userType == 'client'){
+    if ($userType == 'client') {
         $requete = "SELECT * FROM client WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
         $resultat = mysqli_query($connexion, $requete);
 
-        if (mysqli_num_rows($resultat) > 0) {
-            // Les champs correspondent, on crée la session coach
-            $coach = mysqli_fetch_assoc($resultat);
-            $_SESSION["Coach"] = true;
+        if ($resultat && mysqli_num_rows($resultat) > 0) {
+            // Les champs correspondent, on crée la session client
+            $client = mysqli_fetch_assoc($resultat);
+            $_SESSION["client"] = true;
             $_SESSION["Mail"] = $mail;
             $_SESSION["Nom"] = $nom;
             $_SESSION["Prenom"] = $prenom;
-            echo "Connexion client réussie bienvenue $prenom";
-            
+            echo "Connexion réussie, bienvenue client $prenom";
+
             // Redirection vers la page réservée aux clients
             exit();
+        } else {
+            echo "Vous n'êtes pas enregistré dans la base de données des clients.";
         }
-        echo "Vous n'êtes pas enregistré dans la base de données des clients.";
     }
-
-    //admin
-    if($userType == 'admin'){
-        $requete = "SELECT * FROM administrateur
-         WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
-        $resultat = mysqli_query($connexion, $requete);
-
-        if (mysqli_num_rows($resultat) > 0) {
-            // Les champs correspondent, on crée la session coach
-            $coach = mysqli_fetch_assoc($resultat);
-            $_SESSION["Coach"] = true;
-            $_SESSION["Mail"] = $mail;
-            $_SESSION["Nom"] = $nom;
-            $_SESSION["Prenom"] = $prenom;
-            echo "Connexion administrateur réussie bienvenue $prenom";
-            
-            // Redirection vers la page réservée aux clients
-            exit();
-        }
-        echo "Vous n'êtes pas enregistré dans la base de données des administrateurs.";
-    }
-
+} else {
+    echo "Le formulaire n'a pas été soumis.";
 }
-
-else{
-    echo "marche pas";
-}
-
 ?>
