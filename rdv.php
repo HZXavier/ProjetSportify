@@ -3,25 +3,46 @@
 $baseDeDonnees = "fitness";
 
 // Connexion à la base de données
-$connexion = mysqli_connect('localhost', 'root', '',$baseDeDonnees);
+$connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
 // Vérifier la connexion
 if (!$connexion) {
     die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+    echo "non";
 }
 
 // ID du coach
 $idCoach = 1; // Remplacez cette valeur par l'ID du coach que vous souhaitez afficher le planning
 
+// Vérification du formulaire soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POST["heure"])) {
+    $jour = $_POST["jour"];
+    $heure = $_POST["heure"];
+
+    // Vérification de la disponibilité du créneau
+    $requeteVerif = "SELECT Occupé FROM planning WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+    $resultatVerif = mysqli_query($connexion, $requeteVerif);
+    if (mysqli_num_rows($resultatVerif) > 0) {
+        $creneau = mysqli_fetch_assoc($resultatVerif);
+        $occupe = $creneau['Occupé'];
+
+        if (!$occupe) {
+            // Mettre à jour le créneau
+            $requeteMiseAJour = "UPDATE planning SET Occupé = 1 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+            mysqli_query($connexion, $requeteMiseAJour);
+        }
+    }
+}
+
 // Requête pour récupérer le planning du coach
-$requete = "SELECT * FROM planning WHERE ID_COACH = $idCoach";
+$requete = "SELECT * FROM planning WHERE Id_Coach = $idCoach";
 $resultat = mysqli_query($connexion, $requete);
 
 if (mysqli_num_rows($resultat) > 0) {
     // Récupération des jours distincts
     $jours = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
-        $jour = $creneau['JOUR'];
+        $jour = $creneau['Jour'];
         if (!in_array($jour, $jours)) {
             array_push($jours, $jour);
         }
@@ -32,8 +53,8 @@ if (mysqli_num_rows($resultat) > 0) {
     $heuresDebut = array();
     $heuresFin = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
-        $heureDebut = $creneau['HEURE_DEBUT'];
-        $heureFin = $creneau['HEURE_FIN'];
+        $heureDebut = $creneau['Heure_Début'];
+        $heureFin = $creneau['Heure_Fin'];
         if (!in_array($heureDebut, $heuresDebut)) {
             array_push($heuresDebut, $heureDebut);
         }
@@ -63,13 +84,18 @@ if (mysqli_num_rows($resultat) > 0) {
             mysqli_data_seek($resultat, 0); // Réinitialiser le pointeur du résultat
             $occupe = false;
             while ($creneau = mysqli_fetch_assoc($resultat)) {
-                if ($creneau['JOUR'] == $jour && $creneau['HEURE_DEBUT'] == $heureDebut) {
-                    $occupe = $creneau['OCCUPE'];
+                if ($creneau['Jour'] == $jour && $creneau['Heure_Début'] == $heureDebut) {
+                    $occupe = $creneau['Occupé'];
                     break;
                 }
             }
             $occupation = $occupe ? "Occupé" : "Libre";
-            echo "<td>$occupation</td>";
+            if (!$occupe) {
+                echo "<td><button onclick='prendreRendezVous(\"$jour\", \"$heureDebut\")'>Réserver</button></td>";
+            } else {
+                echo "<td>$occupation</td>";
+            }
+
         }
         echo "</tr>";
     }
@@ -78,5 +104,20 @@ if (mysqli_num_rows($resultat) > 0) {
 } else {
     echo "Aucun créneau trouvé pour ce coach.";
 }
-
 ?>
+
+<script>
+function prendreRendezVous(jour, heure) {
+    if (confirm("Voulez-vous réserver ce créneau ?")) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                location.reload(); // Actualiser la page après la réservation
+            }
+        };
+        xhttp.open("POST", "", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("jour=" + jour + "&heure=" + heure);
+    }
+}
+</script>
