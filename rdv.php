@@ -12,7 +12,7 @@ if (!$connexion) {
 }
 
 // ID du coach
-$idCoach = 1; // Remplacez cette valeur par l'ID du coach que vous souhaitez afficher le planning
+$idCoach = $_GET['info']; 
 
 // Vérification du formulaire soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POST["heure"])) {
