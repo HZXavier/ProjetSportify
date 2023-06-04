@@ -65,16 +65,13 @@
     </form>
 
      <?php
-    // Informations de connexion à la base de donnees
+    session_start(); 
     $baseDeDonnees = "fitness";
-
-    // Connexion à la base de donnees
-    $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
-
-    // Verifier la connexion
+    $conn = new mysqli('localhost', 'root', '', $baseDeDonnees);
     if (!$connexion) {
-        die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
-    }
+    die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+    echo "non";
+}
     if ($_SESSION['profil'] === 'admin') {
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -90,7 +87,6 @@
         $telephone = $_POST["telephone"];
 
         //coach
-
         if ($userType == 'coach') {
             $requete = "INSERT INTO coach (Id_Coach, Nom, Prenom, Mail, Mdp, Telephone) VALUES ('', '$nom', '$prenom', '$mail', '$mdp', '$telephone')";
             echo 'après sql';
