@@ -76,7 +76,7 @@ En conclusion, le football présente de nombreux bienfaits pour la santé physiq
         <img class="centered"src="ragnar.png"  width="450" height="562"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -147,7 +147,7 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
       <img class="centered"src="florent.png"  width="450" height="298"/>  
       </figure>
       <nav>
-        <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=2">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -216,7 +216,7 @@ Enfin, le tennis est un excellent moyen de réduire le stress et de favoriser le
       <img class="centered"src="pierre_menes.png"  width="600" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=3">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -284,7 +284,7 @@ En conclusion, le basketball offre une multitude de bienfaits pour la santé phy
       <img class="centered"src="nain_indien.png"  width="450" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=4">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -335,7 +335,7 @@ COMPÉTENCES<br><br>
       <img class="centered"src="nain.png"  width="250" height="281"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=5">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -403,7 +403,7 @@ En conclusion, le rugby offre une multitude de bienfaits pour la santé physique
       <img class="centered"src="chabal.png"  width="450" height="300"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=6">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
