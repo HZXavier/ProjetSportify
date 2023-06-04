@@ -82,7 +82,7 @@ En conclusion, la musculation offre de nombreux bienfaits pour la santé physiqu
 		<img class="centered"src="arnold.png"  width="450" height="669"/>  
 		</figure>
 		<nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=7">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -148,7 +148,7 @@ En conclusion, le fitness offre une multitude de bienfaits pour la santé physiq
 		<img class="centered"src="squat_blonde.png"  width="450" height="300"/>  
 		</figure>
 		<nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=8">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -213,7 +213,7 @@ En conclusion, le biking est une activité physique complète qui offre de nombr
 		<img class="centered"src="squat_brune.png"  width="450" height="300"/>  
 		</figure>
 		<nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=9">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -274,7 +274,7 @@ En conclusion, le cardio training offre de nombreux bienfaits pour la santé et 
 		<img class="centered"src="nicole.png"  width="450" height="300"/>  
 		</figure>
 		<nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=10">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -335,7 +335,7 @@ En conclusion, les cours de renforcement musculaire collectif offrent de nombreu
 		<img class="centered"src="sport_collectif.png"  width="450" height="281"  />  
 		</figure>
 		<nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=11">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
@@ -377,21 +377,6 @@ LANGUES:<BR><br>
 		</p>
 		</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
