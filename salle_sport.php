@@ -68,17 +68,17 @@
 				  </tr>
 				  <tr>
 				    <th>Horaires</th>
-				    <td>8h - 20h</td>
-				    <td>8h - 20h</td>
-				    <td>9h - 20h</td>
-				    <td>8h - 20h</td>
-				    <td>8h - 20h</td>
+				    <td>8h - 18h</td>
+				    <td>8h - 18h</td>
+				    <td>9h - 18h</td>
+				    <td>8h - 18h</td>
+				    <td>8h - 18h</td>
 				    <td>11h - 17h</td>
 				    <td>Ferme</td>
 				  </tr>
 				</table>
 
-
+		<li><a href="rdv.php?info=20">PRENDRE RENDEZ-VOUS</a></li>
 
 	    	<br><h4>Quelques règles et conseils concernant notre materiel :</h4>
 
