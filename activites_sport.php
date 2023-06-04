@@ -85,6 +85,7 @@ En conclusion, la musculation offre de nombreux bienfaits pour la sante physique
         <li><a href="rdv.php?info=7">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_arnold.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">
 		ARNOLD SCHWARZENEGGER<br><br>
@@ -151,6 +152,7 @@ En conclusion, le fitness offre une multitude de bienfaits pour la sante physiqu
         <li><a href="rdv.php?info=8">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_emilie.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">EMILIE BOULLARD<br><br>
 		Coach de Fitness | 23 ans<br>
@@ -216,6 +218,7 @@ En conclusion, le biking est une activite physique complète qui offre de nombre
         <li><a href="rdv.php?info=9">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_camille.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">CAMILLE MAMELLON<br><br>
 		Coach de Biking | 24 ans<br>
@@ -277,6 +280,7 @@ En conclusion, le cardio training offre de nombreux bienfaits pour la sante et l
         <li><a href="rdv.php?info=10">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_nicole.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">NICOLE ANISTON<br><br>
 		Coach Recuperation & Masseuse | 24 ans<br>
@@ -338,6 +342,7 @@ En conclusion, les cours de renforcement musculaire collectif offrent de nombreu
         <li><a href="rdv.php?info=11">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_jean.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">
 
@@ -379,18 +384,6 @@ LANGUES:<BR><br>
 		</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 		<script>
     function retourPagePrecedente() {
       window.history.back();
@@ -406,6 +399,9 @@ LANGUES:<BR><br>
         volet.style.display = "none";
         titreVolet.style.fontWeight = "normal";
       }
+    }
+			function openProfile(xmlFile) {
+      window.open(xmlFile, '_blank');
     }
   </script>
 
