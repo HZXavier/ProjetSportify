@@ -147,7 +147,7 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
       <img class="centered"src="florent.png"  width="450" height="298"/>  
       </figure>
       <nav>
-        <li><a href="rendez_vous.php">PRENDRE RENDEZ-VOUS</a></li>
+        <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
       </nav>
