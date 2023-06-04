@@ -88,11 +88,33 @@ En conclusion, la musculation offre de nombreux bienfaits pour la sante physique
 	<li><button onclick="openProfile('cv_arnold.xml')">CV </button></li>
       </nav>
 		<p style="text-align: justify;">
-		ARNOLD SCHWARZENEGGER<br><br>
+			<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 7";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
+
 		Coach de Musculation | Experimente dans le domaine du fitness<br>
 		Adresse : 3 rue des sapins<br>
 		Telephone : 07 45 23 89 96 <br>
-		Email : <a href="mailto:arnold.sch@gmail.com">arnold.sch@gmail.com</a><br><br>
 
 		PROFIL PROFESSIONNEL<br><br>
 		Coach de musculation experimente avec une passion pour la remise en forme et la musculation. Expert dans la conception de programmes d'entraînement personnalises pour aider les clients à atteindre leurs objectifs de musculation. Solides competences en communication pour motiver et inspirer les autres à repousser leurs limites et à obtenir des resultats optimaux.<br><br>
@@ -154,11 +176,34 @@ En conclusion, le fitness offre une multitude de bienfaits pour la sante physiqu
         <li><a href="discuter.php">DISCUTER</a></li>
 	<li><button onclick="openProfile('cv_emilie.xml')">CV </button></li>
       </nav>
-		<p style="text-align: justify;">EMILIE BOULLARD<br><br>
+		<p style="text-align: justify;">
+			<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 8";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
+
 		Coach de Fitness | 23 ans<br>
 		Lyon<br>
 		Telephone : 06 85 52 41 96<br>
-		Email : <a href="mailto:emilie.boullard@email.com">emilie.boullard@email.com</a><br><br>
 
 		PROFIL PROFESSIONNEL<br><br>
 		Coach de fitness passionnee par la sante et le bien-être, avec une experience dans la conception de programmes d'entraînement personnalises et la motivation des clients à atteindre leurs objectifs. Competente dans l'enseignement des cours collectifs et dans l'accompagnement individuel. Bonne communicatrice et capable d'inspirer les autres à adopter un mode de vie actif et sain.<br><br>
@@ -220,11 +265,34 @@ En conclusion, le biking est une activite physique complète qui offre de nombre
         <li><a href="discuter.php">DISCUTER</a></li>
 	<li><button onclick="openProfile('cv_camille.xml')">CV </button></li>
       </nav>
-		<p style="text-align: justify;">CAMILLE MAMELLON<br><br>
+		<p style="text-align: justify;">
+			<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 9";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
+
 		Coach de Biking | 24 ans<br>
 		Paris<br>
 		Telephone : 06 63 74 12 56 <br>
-		Email : <a href="mailto:camille.mamelon@salleomnes.fr">camille.mamelon@salleomnes.fr</a><br><br>
 
 		PROFIL PROFESSIONNEL<br><br>
 		Coach de fitness passionnee par la sante et le bien-être, avec une experience dans la conception de programmes d'entraînement personnalises et la motivation des clients à atteindre leurs objectifs. Competente dans l'enseignement des cours collectifs et dans l'accompagnement individuel. Bonne communicatrice et capable d'inspirer les autres à adopter un mode de vie actif et sain.<br><br>
@@ -282,11 +350,34 @@ En conclusion, le cardio training offre de nombreux bienfaits pour la sante et l
         <li><a href="discuter.php">DISCUTER</a></li>
 	<li><button onclick="openProfile('cv_nicole.xml')">CV </button></li>
       </nav>
-		<p style="text-align: justify;">NICOLE ANISTON<br><br>
+		<p style="text-align: justify;">
+			<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 10";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
+
 		Coach Recuperation & Masseuse | 24 ans<br>
 		Adresse : 789 Rue de la Detente, 75000 Paris<br>
 		Telephone : 06 69 69 69 69<br>
-		Email : <a href="mailto:nicole.aniston@gmail.com">nicole.aniston@gmail.com</a><br><br>
 
 		PROFIL PROFESSIONNEL<br><br>
 		Coach specialisee dans la recuperation physique et la massotherapie. Experte dans l'accompagnement des sportifs et des personnes actives pour optimiser leur recuperation, soulager les tensions musculaires et favoriser le bien-être. Competente dans diverses techniques de massage pour repondre aux besoins individuels des clients. Attentive, empathique et dediee à fournir des soins de qualite pour ameliorer la sante et le bien-être global.<br><br>
@@ -346,7 +437,30 @@ En conclusion, les cours de renforcement musculaire collectif offrent de nombreu
       </nav>
 		<p style="text-align: justify;">
 
-			Jean Rince-Oeil<BR><br>
+			<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 11";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
+
 
 EXPERIENCE PROFESSIONNELLES:<BR><br>
 Professeur de Cours Collectif | Salle OMNES, Paris | Octobre 2018 - Present<BR>
