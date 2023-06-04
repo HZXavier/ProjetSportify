@@ -61,13 +61,8 @@
 
 
     <?php
-    // Informations de connexion à la base de donnees
     $baseDeDonnees = "fitness";
-
-    // Connexion à la base de donnees
     $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
-
-    // Verifier la connexion
     if (!$connexion) {
         die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
     }
