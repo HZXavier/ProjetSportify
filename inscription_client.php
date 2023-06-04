@@ -7,11 +7,9 @@
     <h2>Inscription Client</h2>
 
     <?php
-
-    $dbname = "Fitness";
-
-    $conn = new mysqli('localhost', 'root', '', $dbname);
-
+    session_start(); 
+    $baseDeDonnees = "fitness";
+    $conn = new mysqli('localhost', 'root', '', $baseDeDonnees);
     if ($conn->connect_error) {
         die("La connexion à la base de donnees a echoue : " . $conn->connect_error);
     }
