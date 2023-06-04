@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EVENEMENTS</title>
 	<link rel="stylesheet" href="style.css">
+	<?php
+session_start(); ?>
 </head>
 <body>
 	<div class="wrapper">
