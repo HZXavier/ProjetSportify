@@ -79,14 +79,34 @@ En conclusion, le football presente de nombreux bienfaits pour la sante physique
         <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	      <li> <button onclick="openProfile('cv_ragnar.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
-         RAGNAR BRETON<br><br>
+        <?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 1";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 Professeur de Football | 30 ans<br>
 Adresse : 1 impasse des cerises<br>
 Telephone : +33620948312<br>
-Email : <a href="mailto:ragnar@sportomnes.fr">ragnar@sportomnes.fr</a><br><br>
 
 PROFIL PROFESSIONNEL<br><br>
 Professeur de Football passionne avec une solide experience dans l'enseignement des techniques de fitness, de renforcement musculaire et de sports de combat. Expert dans la conception de programmes d'entraînement personnalises, axes sur les objectifs individuels des clients. Bon communicateur et motive à aider les autres à atteindre leur plein potentiel physique et mental.<br><br>
@@ -151,15 +171,34 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
         <li><a href="rdv.php?info=2">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	<li> <button onclick="openProfile('cv_florent.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;"><br>
-FLORENT MANAUDOU<br>
+<?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 2";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 32 ans | Professeur de natation<br>
 Adresse : 12 impasse des bassins<br>
 Telephone : +33620268312<br>
-Email : <a href="mailto:flo.piscine@sportomnes.fr">flo.piscine@sportomnes.fr</a><br><br>
-
 
 
 EXPERIENCES PROFESSIONNELLES:<br><BR>
@@ -221,13 +260,34 @@ Enfin, le tennis est un excellent moyen de reduire le stress et de favoriser le 
         <li><a href="rdv.php?info=3">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	<li> <button onclick="openProfile('cv_pierre.xml')">CV </button></li>
       </nav>
-      <p style="text-align: justify;">PIERRE MÈNES<br><br>
+      <p style="text-align: justify;">
+        <?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 3";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 Coach de Tennis | 56 ans<br>
 Adresse : 123 Rue du Tennis, 75000 Paris<br>
 Telephone : 06 78 56 45 12<br>
-Email : <a href="mailto:pierre.menes@gmail.com">pierre.menes@gmail.com</a><br><br>
 
 PROFIL PROFESSIONNEL<br><br>
 Coach de tennis passionne avec plus de 20 ans d'experience dans l'enseignement du tennis à des joueurs de tous niveaux. Competent dans la conception de programmes d'entraînement adaptes aux besoins individuels des joueurs et dans la gestion de leur progression. Bon communicateur, motive à aider les joueurs à atteindre leurs objectifs et à ameliorer leurs performances sur le court.<br><br>
@@ -290,13 +350,34 @@ En conclusion, le basketball offre une multitude de bienfaits pour la sante phys
         <li><a href="rdv.php?info=4">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	<li><button onclick="openProfile('cv_tanguy.xml')">CV </button></li
       </nav>
-      <p style="text-align: justify;">TANGUY INDIE<br><br>
+      <p style="text-align: justify;">
+        <?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 4";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 Coach Basketball | 14 ans<br>
 Adresse : 456 Rue du Bien-Être, 75000 Paris<br>
 Telephone : 06 63 52 41 78<br>
-Email : <a href="mailto:tanguy.indie@gmail.com">tanguy.indie@gmail.com</a><br><br>
 
 PROFIL PROFESSIONNEL<br><br>
 Jeune coach Basketball passionne par le developpement personnel et l'amelioration de la performance mentale. Competent dans l'accompagnement de personnes de tous âges pour les aider à atteindre leurs objectifs, à renforcer leur confiance en eux et à developper des strategies de gestion du stress. Bon communicateur et motive à inspirer les autres à developper leur plein potentiel.<br><br>
@@ -342,13 +423,34 @@ COMPeTENCES<br><br>
         <li><a href="rdv.php?info=5">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	<li><button onclick="openProfile('cv_romain.xml')">CV </button></li>
       </nav>
-      <p style="text-align: justify;">ROMAIN PETIT<br><br>
+      <p style="text-align: justify;">
+        <?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 5";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 Coach plongeon | 33 ans<br>
 Adresse : 789 Rue de l'Inclusion, 75000 Paris<br>
 Telephone : 06 74 41 52 63<br>
-Email : <a href="mailto:romain.petit@gmail.com">romain.petit@gmail.com</a><br><br>
 
 PROFIL PROFESSIONNEL<br><br>
 Coach devoue et passionne specialise dans la danse auqatique pour les personnes en situation de handicap. Experimente dans l'adaptation des exercices et des programmes d'entraînement pour repondre aux besoins individuels des athlètes handisport. Competent dans la motivation et l'inspiration des sportifs pour repousser leurs limites et atteindre leurs objectifs. Engage dans l'inclusion et l'autonomisation des personnes en situation de handicap.<br><br>
@@ -411,16 +513,36 @@ En conclusion, le rugby offre une multitude de bienfaits pour la sante physique 
         <li><a href="rdv.php?info=6">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
-	<li><button onclick="openProfile('cv_chabal.xml')">CV </button></li>
       </nav>
 
       
-      <p style="text-align: justify;">SEBASTIEN CHABAL<br><br>
-
+      <p style="text-align: justify;">
+        <?php 
+          $baseDeDonnees = "fitness";
+          $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
+          if (!$connexion) {
+              die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+              echo "non";
+          }
+          $requete1 = "SELECT Nom, Prenom, Mail FROM coach WHERE Id_Coach LIKE 6";
+          $resultat = mysqli_query($connexion, $requete1);
+          if (!$resultat) {
+              die("Erreur lors de l'exécution de la requête : " . mysqli_error($connexion));
+          }
+          while ($row = mysqli_fetch_assoc($resultat)) {
+              $nom = $row['Nom'];
+              $prenom = $row['Prenom'];
+              $mail = $row['Mail'];
+              
+              // Affichage des données
+              echo "Nom : $nom<br>";
+              echo "Prénom : $prenom<br>";
+              echo "Mail : $mail<br>";
+          }
+         ?>
 45 ans | Professeur de rugby<br>
 Adresse : 12 impasse des ballons<br>
 Telephone : +33620741312<br>
-Email : <a href="mailto:seb.chabal@sportomnes.fr">seb.chabal@sportomnes.fr</a><br><br>
 
 
 EXPERIENCES PROFESSIONNELLES:<br><BR>
@@ -472,10 +594,6 @@ LANGUES:<br><BR>
         volet.style.display = "none";
         titreVolet.style.fontWeight = "normal";
       }
-    }
-	  
-	  function openProfile(xmlFile) {
-      window.open(xmlFile, '_blank');
     }
   </script>
 
