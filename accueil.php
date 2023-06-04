@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>Réservation de consultations sportives</title>
+  <title>Reservation de consultations sportives</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -48,7 +48,7 @@
 
     <section>
       <h1 style="text-align: center;">EVENEMENT DE LA SEMAINE</h1><br>
-      Cette semaine, tout comme chaque dernière semaine du mois, nous proposons une rencontre entre coachs, administrateurs et visiteurs via une partie de paintball. Coachs et adiminstrateurs seront dans l'équipe bleue contre les visiteurs en équipe rouge. Une petite pause au bar sera organisée juste après le paintball, histoire de discuter plus sérieusement qu'en se tirant dessus. Alors venez vous amuser, tout est gratuit pour les 9 élus qui seront tirés au sort. Contactez nous par mail pour vous inscrire au tirage. A vos marques, prêts, tirez !!!!
+      Cette semaine, tout comme chaque dernière semaine du mois, nous proposons une rencontre entre coachs, administrateurs et visiteurs via une partie de paintball. Coachs et adiminstrateurs seront dans l'equipe bleue contre les visiteurs en equipe rouge. Une petite pause au bar sera organisee juste après le paintball, histoire de discuter plus serieusement qu'en se tirant dessus. Alors venez vous amuser, tout est gratuit pour les 9 elus qui seront tires au sort. Contactez nous par mail pour vous inscrire au tirage. A vos marques, prêts, tirez !!!!
       <figure style="text-align: center;">
         <img src="paintball.png" width="500" height="375" align="center">
       </figure>

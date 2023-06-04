@@ -63,7 +63,7 @@
     <label for="heure">Heure :</label>
     <input type="time" id="heure" name="heure" required>
 
-    <label for="activite">Activité :</label>
+    <label for="activite">Activite :</label>
     <select id="activite" name="activite">
       <option value="muscu">Muscu</option>
       <option value="biking">Biking</option>

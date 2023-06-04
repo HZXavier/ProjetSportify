@@ -61,15 +61,15 @@
 
 
     <?php
-    // Informations de connexion à la base de données
+    // Informations de connexion à la base de donnees
     $baseDeDonnees = "fitness";
 
-    // Connexion à la base de données
+    // Connexion à la base de donnees
     $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
-    // Vérifier la connexion
+    // Verifier la connexion
     if (!$connexion) {
-        die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+        die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -88,7 +88,7 @@
             if ($resultat) {
                 echo 'AUREVOIR !!';
             } else {
-                echo 'Échec de l\'insertion des données du coach : ' . mysqli_error($connexion);
+                echo 'echec de l\'insertion des donnees du coach : ' . mysqli_error($connexion);
             }
         }
         //client
@@ -101,11 +101,11 @@
             if ($resultat) {
                 echo 'CIAO !! $prenom';
             } else {
-                echo 'Échec de l\'insertion des données du coach : ' . mysqli_error($connexion);
+                echo 'echec de l\'insertion des donnees du coach : ' . mysqli_error($connexion);
             }
         }
     } else {
-        echo "Le formulaire n'a pas été soumis.";
+        echo "Le formulaire n'a pas ete soumis.";
     }
 
     mysqli_close($connexion);

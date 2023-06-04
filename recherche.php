@@ -47,7 +47,7 @@
   $baseDeDonnees = "fitness";
   $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
   if (!$connexion) {
-      die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+      die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
   }
 
   $resultats = array();
@@ -73,7 +73,7 @@
       }
   }
 
-  echo "Résultats de la recherche : <br><br>";
+  echo "Resultats de la recherche : <br><br>";
   foreach ($resultats as $resultat) {
       foreach ($resultat as $colonne => $valeur) {
           echo $colonne . ": " . $valeur . "<br>";
@@ -85,7 +85,7 @@
       $baseDeDonnees = "fitness";
       $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
       if (!$connexion) {
-          die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+          die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
       }
       $requete = "SHOW COLUMNS FROM " . $table;
       $resultat = mysqli_query($connexion, $requete);

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link href="tennis.css" rel="stylesheet" type="text/css" />
     <?php
-    // Informations de connexion à la base de données
+    // Informations de connexion à la base de donnees
     $servername = "localhost";
     $username = "nom_utilisateur";
     $password = "mot_de_passe";
@@ -47,12 +47,12 @@
         </div>
     
     
-        <h1>Récapitulatif du formulaire</h1>
+        <h1>Recapitulatif du formulaire</h1>
 
         <div id="identification">
             <?php
             if (isset($_POST['submit_form'])) {
-                // Récupérer les valeurs du formulaire
+                // Recuperer les valeurs du formulaire
                 $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
                 $date_naissance = date('Y-m-d');
@@ -63,9 +63,9 @@
                 
 							
 
-                // Autres opérations à effectuer avec les données
+                // Autres operations à effectuer avec les donnees
             } else {
-                echo "<p>Aucune donnée n'a été soumise.</p>";
+                echo "<p>Aucune donnee n'a ete soumise.</p>";
             }
 
             $sql = "INSERT INTO CLIENT (nom, prenom, date_naissance,adresse_mail) VALUES ('$nom', '$prenom', '$date_naissance','$adresse_mail')";

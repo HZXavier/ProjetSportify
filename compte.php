@@ -19,11 +19,10 @@
     </header>
     <?php
     session_start(); 
-    //echo '<br><br>BIENVENUE '.$_SESSION['client']['Prenom'];
     if (isset($_SESSION['profil'])) {
         echo '<br><br>BIENVENUE '.$_SESSION['client']['Prenom'];
     } else {
-        echo 'personne n\'est connecté';
+        echo 'personne n\'est connecte';
     }
     ?>
 
@@ -35,7 +34,7 @@
         <?php if (isset($_SESSION['profil']['']) && $_SESSION['profil'][''] === 'client'): ?>
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
         <?php endif ?>
-        <!-- Seulement si personne n'est connecté -->
+        <!-- Seulement si personne n'est connecte -->
         <li><a href="compte.php">Votre Compte</a></li>
         <?php if (isset($_SESSION['profil']['']) && $_SESSION['profil'][''] === 'administrateur'): ?>
         <li><a href="ajouter.php">Inscrire</a></li>        
@@ -65,7 +64,7 @@
     $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
     if (!$connexion) {
-        die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+        die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,7 +81,7 @@
             $resultat = mysqli_query($connexion, $requete_connexion);
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on crée la session coach
+                // Les champs correspondent, on cree la session coach
                 $requete_recup = "SELECT DISTINCT * FROM coach;";
                 $result = mysqli_query($connexion, $requete_recup);
                 while ($data = mysqli_fetch_assoc($result)) {
@@ -92,10 +91,10 @@
                     $_SESSION['coach']['Prenom'] = $data['Prenom'];
                 }
 
-                // Redirection vers la page réservée aux coachs
+                // Redirection vers la page reservee aux coachs
                 exit();
             }
-            echo "Vous n'êtes pas enregistré dans la base de données des coachs.";
+            echo "Vous n'êtes pas enregistre dans la base de donnees des coachs.";
         }
 
         // Client
@@ -114,7 +113,6 @@
 
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on crée la session client
                 $requete_recup = "SELECT DISTINCT * FROM client;";
                 $result = mysqli_query($connexion, $requete_recup);
                 if ($data = mysqli_fetch_assoc($result)) {
@@ -122,16 +120,15 @@
                     $_SESSION['client']['Mail'] = $data['Mail'];
                     $_SESSION['client']['Nom'] = $data['Nom'];
                     $_SESSION['client']['Prenom'] = $data['Prenom'];
-                    // Vérification des informations de session
                     echo '<pre>';
                     print_r($_SESSION['client']);
                     echo '</pre>';
                 }
 
-                // Redirection vers la page réservée aux clients
+                // Redirection vers la page reservee aux clients
                 exit();
             }
-            echo "Vous n'êtes pas enregistré dans la base de données des clients.";
+            echo "Vous n'êtes pas enregistre dans la base de donnees des clients.";
         }
 
         // Administrateur
@@ -141,7 +138,7 @@
             $resultat = mysqli_query($connexion, $requete);
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on crée la session administrateur
+                // Les champs correspondent, on cree la session administrateur
                 $requete_recup = "SELECT DISTINCT * FROM administrateur;";
                 $result = mysqli_query($connexion, $requete_recup);
                 while ($data = mysqli_fetch_assoc($result)) {
@@ -151,10 +148,10 @@
                     $_SESSION['administrateur']['Prenom'] = $data['Prenom'];
                 }
 
-                // Redirection vers la page réservée aux administrateurs
+                // Redirection vers la page reservee aux administrateurs
                 exit();
             }
-            echo "Vous n'êtes pas enregistré dans la base de données des administrateurs.";
+            echo "Vous n'êtes pas enregistre dans la base de donnees des administrateurs.";
         }
     }
 
@@ -165,7 +162,7 @@
   </div>
 
   <footer>
-    <p style="text-align: center; font-size: 10pt;">© 2023 Sportify - Tous droits réservés</p>
+    <p style="text-align: center; font-size: 10pt;">© 2023 Sportify - Tous droits reserves</p>
   </footer>
 </body>
 </html>

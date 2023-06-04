@@ -74,13 +74,13 @@
 				    <td>8h - 20h</td>
 				    <td>8h - 20h</td>
 				    <td>11h - 17h</td>
-				    <td>Fermé</td>
+				    <td>Ferme</td>
 				  </tr>
 				</table>
 
 
 
-	    	<br><h4>Quelques règles et conseils concernant notre matériel :</h4>
+	    	<br><h4>Quelques règles et conseils concernant notre materiel :</h4>
 
 	    	<div class="titre-volet" onclick="ouvrirVolet('tractions')">
 	    		<h3>TRACTIONS</h3>
@@ -90,19 +90,19 @@
 		    	<figure style="text-align: center">
 					<img class="centered" src="traction.png"  width="450" height="300"/>
 				</figure>
-		      <p style ="text-align: justify;"> D'un point de vue sportif, les tractions sont un exercice physique polyvalent qui sollicite principalement les muscles du dos, des épaules et des bras. Elles servent à renforcer la musculature du haut du corps, améliorer la stabilité et la posture, et développer la force fonctionnelle. Voici quelques-uns des principaux bénéfices des tractions :<br><br>
+		      <p style ="text-align: justify;"> D'un point de vue sportif, les tractions sont un exercice physique polyvalent qui sollicite principalement les muscles du dos, des epaules et des bras. Elles servent à renforcer la musculature du haut du corps, ameliorer la stabilite et la posture, et developper la force fonctionnelle. Voici quelques-uns des principaux benefices des tractions :<br><br>
 
-			1. Renforcement musculaire : Les tractions ciblent principalement les muscles du dos, notamment le grand dorsal, les trapèzes, les rhomboïdes et les muscles des bras comme les biceps et les avant-bras. En effectuant cet exercice régulièrement, vous pouvez développer une musculature dorsale plus forte et plus définie.<br>
+			1. Renforcement musculaire : Les tractions ciblent principalement les muscles du dos, notamment le grand dorsal, les trapèzes, les rhomboïdes et les muscles des bras comme les biceps et les avant-bras. En effectuant cet exercice regulièrement, vous pouvez developper une musculature dorsale plus forte et plus definie.<br>
 
-			2. Amélioration de la posture : Les tractions peuvent aider à corriger les déséquilibres musculaires qui sont souvent à l'origine d'une mauvaise posture. En renforçant les muscles du dos et des épaules, les tractions contribuent à maintenir une position droite et à réduire les risques de problèmes liés à la posture, tels que les douleurs au cou et au dos.<br>
+			2. Amelioration de la posture : Les tractions peuvent aider à corriger les desequilibres musculaires qui sont souvent à l'origine d'une mauvaise posture. En renforçant les muscles du dos et des epaules, les tractions contribuent à maintenir une position droite et à reduire les risques de problèmes lies à la posture, tels que les douleurs au cou et au dos.<br>
 
-			3. Développement de la force fonctionnelle : Les tractions sont un mouvement fonctionnel qui implique l'utilisation de plusieurs groupes musculaires simultanément. Elles vous aident à développer une force globale dans le haut du corps, ce qui peut se traduire par une amélioration des performances dans d'autres activités physiques, comme l'haltérophilie, l'escalade, la natation et les sports de contact.<br>
+			3. Developpement de la force fonctionnelle : Les tractions sont un mouvement fonctionnel qui implique l'utilisation de plusieurs groupes musculaires simultanement. Elles vous aident à developper une force globale dans le haut du corps, ce qui peut se traduire par une amelioration des performances dans d'autres activites physiques, comme l'halterophilie, l'escalade, la natation et les sports de contact.<br>
 
-			4. Augmentation de la puissance du haut du corps : En raison de l'implication de plusieurs muscles majeurs, les tractions sont un excellent exercice pour développer la puissance du haut du corps. La capacité de tirer son propre poids vers le haut exige un effort important, ce qui peut conduire à une amélioration de la force et de la puissance musculaire.<br>
+			4. Augmentation de la puissance du haut du corps : En raison de l'implication de plusieurs muscles majeurs, les tractions sont un excellent exercice pour developper la puissance du haut du corps. La capacite de tirer son propre poids vers le haut exige un effort important, ce qui peut conduire à une amelioration de la force et de la puissance musculaire.<br>
 
-			5. Défi physique et mental : Les tractions sont un exercice exigeant qui nécessite force, endurance et coordination. Les maîtriser et augmenter progressivement le nombre de répétitions peut être un défi stimulant tant sur le plan physique que mental. Cela peut vous aider à développer la discipline, la persévérance et la confiance en vous.<br><br>
+			5. Defi physique et mental : Les tractions sont un exercice exigeant qui necessite force, endurance et coordination. Les maîtriser et augmenter progressivement le nombre de repetitions peut être un defi stimulant tant sur le plan physique que mental. Cela peut vous aider à developper la discipline, la perseverance et la confiance en vous.<br><br>
 
-			Il convient de noter que les tractions peuvent être adaptées en fonction de votre niveau de condition physique. Si vous êtes débutant, vous pouvez commencer par des variantes plus faciles, telles que les tractions assistées avec une bande élastique ou en utilisant une machine d'assistance. Avec le temps et la pratique, vous pourrez progresser vers des tractions complètes non assistées.</p></div></div>
+			Il convient de noter que les tractions peuvent être adaptees en fonction de votre niveau de condition physique. Si vous êtes debutant, vous pouvez commencer par des variantes plus faciles, telles que les tractions assistees avec une bande elastique ou en utilisant une machine d'assistance. Avec le temps et la pratique, vous pourrez progresser vers des tractions complètes non assistees.</p></div></div>
 
 
 		  	<div class="titre-volet" onclick="ouvrirVolet('rameurs')">
@@ -113,29 +113,29 @@
 		    	<figure style="text-align: center">
 					<img class="centered" src="rameur.png"  width="450" height="300"/>
 				</figure>
-		    <p style ="text-align: justify;">D'un point de vue sportif, les exercices de rameur, également connus sous le nom de rowing, sont des mouvements qui sollicitent principalement les muscles du dos, des épaules, des bras et des jambes. Ils sont souvent utilisés comme exercices de renforcement musculaire et de cardio-training. Voici à quoi ils servent et comment effectuer le mouvement :<br><br>
+		    <p style ="text-align: justify;">D'un point de vue sportif, les exercices de rameur, egalement connus sous le nom de rowing, sont des mouvements qui sollicitent principalement les muscles du dos, des epaules, des bras et des jambes. Ils sont souvent utilises comme exercices de renforcement musculaire et de cardio-training. Voici à quoi ils servent et comment effectuer le mouvement :<br><br>
 
-			1. Renforcement musculaire : Les exercices de rameur sont excellents pour renforcer les muscles du dos, notamment le grand dorsal, les trapèzes, les rhomboïdes et les muscles des bras tels que les biceps et les avant-bras. Ils ciblent également les muscles des épaules, des jambes et du tronc. Ces mouvements aident à équilibrer la musculature du haut du corps, ce qui peut améliorer la posture et réduire les risques de déséquilibres musculaires.<br>
+			1. Renforcement musculaire : Les exercices de rameur sont excellents pour renforcer les muscles du dos, notamment le grand dorsal, les trapèzes, les rhomboïdes et les muscles des bras tels que les biceps et les avant-bras. Ils ciblent egalement les muscles des epaules, des jambes et du tronc. Ces mouvements aident à equilibrer la musculature du haut du corps, ce qui peut ameliorer la posture et reduire les risques de desequilibres musculaires.<br>
 
-			2. Cardio-training : Les exercices de rameur sont également une forme d'entraînement cardiovasculaire efficace. Ils permettent d'augmenter la fréquence cardiaque et d'améliorer l'endurance cardio-respiratoire. En intégrant des séances d'entraînement de rameur dans votre routine, vous pouvez améliorer votre capacité à effectuer des activités aérobies de longue durée.<br>
+			2. Cardio-training : Les exercices de rameur sont egalement une forme d'entraînement cardiovasculaire efficace. Ils permettent d'augmenter la frequence cardiaque et d'ameliorer l'endurance cardio-respiratoire. En integrant des seances d'entraînement de rameur dans votre routine, vous pouvez ameliorer votre capacite à effectuer des activites aerobies de longue duree.<br>
 
-			Pour effectuer correctement le mouvement de rameur, suivez ces étapes :<br>
+			Pour effectuer correctement le mouvement de rameur, suivez ces etapes :<br>
 
-			1. Commencez en vous asseyant sur le siège du rameur avec les pieds fixés sur les repose-pieds. Assurez-vous que les sangles des repose-pieds sont bien ajustées pour maintenir vos pieds en place.<br>
+			1. Commencez en vous asseyant sur le siège du rameur avec les pieds fixes sur les repose-pieds. Assurez-vous que les sangles des repose-pieds sont bien ajustees pour maintenir vos pieds en place.<br>
 
-			2. Saisissez la poignée du rameur avec les mains, les paumes vers le bas, à une distance légèrement supérieure à la largeur des épaules.<br>
+			2. Saisissez la poignee du rameur avec les mains, les paumes vers le bas, à une distance legèrement superieure à la largeur des epaules.<br>
 
-			3. Dans une position de départ, gardez les bras tendus devant vous, le dos droit et les jambes fléchies. Vos genoux devraient être pliés, prêts à être étendus.<br>
+			3. Dans une position de depart, gardez les bras tendus devant vous, le dos droit et les jambes flechies. Vos genoux devraient être plies, prêts à être etendus.<br>
 
-			4. Pour initier le mouvement, poussez avec les jambes en les étendant complètement tout en inclinant légèrement le torse vers l'arrière. Continuez en utilisant les muscles du dos pour tirer la poignée vers votre corps.<br>
+			4. Pour initier le mouvement, poussez avec les jambes en les etendant complètement tout en inclinant legèrement le torse vers l'arrière. Continuez en utilisant les muscles du dos pour tirer la poignee vers votre corps.<br>
 
-			5. Une fois que la poignée atteint le bas de votre cage thoracique, maintenez brièvement cette position contractée.<br>
+			5. Une fois que la poignee atteint le bas de votre cage thoracique, maintenez brièvement cette position contractee.<br>
 
-			6. Inversez le mouvement en commençant par une extension des bras, puis en inclinant légèrement le torse vers l'avant et en fléchissant les jambes pour revenir à la position de départ.<br>
+			6. Inversez le mouvement en commençant par une extension des bras, puis en inclinant legèrement le torse vers l'avant et en flechissant les jambes pour revenir à la position de depart.<br>
 
-			7. Répétez le mouvement de manière fluide et continue, en utilisant un rythme contrôlé.<br><br>
+			7. Repetez le mouvement de manière fluide et continue, en utilisant un rythme contrôle.<br><br>
 
-			Il est important de maintenir une bonne technique tout au long du mouvement, en évitant de se balancer excessivement avec le corps et en gardant le dos droit. Il est recommandé de commencer avec une charge légère et d'augmenter progressivement l'intensité à mesure que vous maîtrisez le mouvement et renforcez votre condition physique.</p></div></div>
+			Il est important de maintenir une bonne technique tout au long du mouvement, en evitant de se balancer excessivement avec le corps et en gardant le dos droit. Il est recommande de commencer avec une charge legère et d'augmenter progressivement l'intensite à mesure que vous maîtrisez le mouvement et renforcez votre condition physique.</p></div></div>
 
 			
 		     
@@ -148,41 +148,41 @@
 					<img class="centered" src="bancs.png"  width="450" height="300"/>
 				</figure>
 			<p style ="text-align: justify;">
-				Les bancs de salle de sport sont des équipements polyvalents et pratiques qui offrent de nombreux avantages pour les séances d'entraînement. Voici quelques raisons pour lesquelles les bancs de salle de sport sont pratiques :
+				Les bancs de salle de sport sont des equipements polyvalents et pratiques qui offrent de nombreux avantages pour les seances d'entraînement. Voici quelques raisons pour lesquelles les bancs de salle de sport sont pratiques :
 				<br><br>
 
-			1. Entraînement de la musculation : Les bancs de salle de sport sont souvent utilisés pour les exercices de musculation. Ils permettent de réaliser une variété d'exercices pour différents groupes musculaires tels que le développé couché, les écartés, le développé militaire, les biceps curl, les triceps dips, les flys, etc. Ces exercices visent à renforcer les muscles du haut du corps, y compris la poitrine, les épaules, les bras et le dos.<br>
+			1. Entraînement de la musculation : Les bancs de salle de sport sont souvent utilises pour les exercices de musculation. Ils permettent de realiser une variete d'exercices pour differents groupes musculaires tels que le developpe couche, les ecartes, le developpe militaire, les biceps curl, les triceps dips, les flys, etc. Ces exercices visent à renforcer les muscles du haut du corps, y compris la poitrine, les epaules, les bras et le dos.<br>
 
-			2. Réglabilité : La plupart des bancs de salle de sport sont réglables en termes d'inclinaison et de position. Cela permet de cibler spécifiquement différents muscles et de modifier l'angle de travail. Par exemple, un banc incliné peut accentuer le travail des muscles du haut de la poitrine, tandis qu'un banc décliné peut cibler davantage les muscles inférieurs de la poitrine. Cette adaptabilité permet de diversifier les exercices et de travailler les muscles de différentes manières.<br>
+			2. Reglabilite : La plupart des bancs de salle de sport sont reglables en termes d'inclinaison et de position. Cela permet de cibler specifiquement differents muscles et de modifier l'angle de travail. Par exemple, un banc incline peut accentuer le travail des muscles du haut de la poitrine, tandis qu'un banc decline peut cibler davantage les muscles inferieurs de la poitrine. Cette adaptabilite permet de diversifier les exercices et de travailler les muscles de differentes manières.<br>
 
-			3. Soutien et stabilité : Les bancs de salle de sport offrent un soutien et une stabilité pendant les exercices de musculation. Ils permettent de maintenir une position stable et contrôlée, ce qui réduit les risques de blessures et facilite l'exécution correcte des mouvements. Lorsqu'on utilise un banc, il est plus facile de maintenir une bonne posture et de se concentrer sur les muscles ciblés.<br>
+			3. Soutien et stabilite : Les bancs de salle de sport offrent un soutien et une stabilite pendant les exercices de musculation. Ils permettent de maintenir une position stable et contrôlee, ce qui reduit les risques de blessures et facilite l'execution correcte des mouvements. Lorsqu'on utilise un banc, il est plus facile de maintenir une bonne posture et de se concentrer sur les muscles cibles.<br>
 
-			4. Progression et charges supplémentaires : Les bancs de salle de sport permettent une progression de l'entraînement en termes de poids utilisé. Ils sont souvent utilisés en combinaison avec des haltères, des barres de musculation ou des machines de musculation. En augmentant progressivement la charge, il est possible de développer la force et la masse musculaire au fil du temps.<br>
+			4. Progression et charges supplementaires : Les bancs de salle de sport permettent une progression de l'entraînement en termes de poids utilise. Ils sont souvent utilises en combinaison avec des haltères, des barres de musculation ou des machines de musculation. En augmentant progressivement la charge, il est possible de developper la force et la masse musculaire au fil du temps.<br>
 
-			5. Polyvalence et gain d'espace : Les bancs de salle de sport sont compacts et polyvalents, ce qui en fait des équipements pratiques pour les salles de sport ou même pour un entraînement à domicile. Ils permettent de réaliser une variété d'exercices avec un seul équipement, ce qui économise de l'espace et rend l'entraînement plus efficace.<br><br>
+			5. Polyvalence et gain d'espace : Les bancs de salle de sport sont compacts et polyvalents, ce qui en fait des equipements pratiques pour les salles de sport ou même pour un entraînement à domicile. Ils permettent de realiser une variete d'exercices avec un seul equipement, ce qui economise de l'espace et rend l'entraînement plus efficace.<br><br>
 
-			Il est important de noter que l'utilisation des bancs de salle de sport doit être effectuée de manière sûre et avec une bonne technique. Il est recommandé de demander l'aide d'un professionnel de la forme physique pour s'assurer d'une exécution correcte des exercices et de prévenir les blessures.<br>
+			Il est important de noter que l'utilisation des bancs de salle de sport doit être effectuee de manière sûre et avec une bonne technique. Il est recommande de demander l'aide d'un professionnel de la forme physique pour s'assurer d'une execution correcte des exercices et de prevenir les blessures.<br>
 			</p></div></div>
 
 			<br><h4>Nos responsables de salle :</h4>
 
 			<div class="coord_gerant">
 			  <div class="nom_gerant">Benoit Traitre</div>
-			  Téléphone : <u>+ 33 7 92 93 23 34</u><br>
+			  Telephone : <u>+ 33 7 92 93 23 34</u><br>
 			  Email : 
 			  <a href="mailto:benoit.traitre@gmail.com">benoit.traitre@gmail.com</a>
 			</div>
 
 			<div class="coord_gerant">
 			  <div class="nom_gerant">Hugues Lacroix</div>
-			  <div class="contact-details">Téléphone : <u>+ 33 7 92 93 23 35</u></div>
+			  <div class="contact-details">Telephone : <u>+ 33 7 92 93 23 35</u></div>
 			  Email : 
 			  <a href="mailto:hugues.lacroix@gmail.com">hugues.lacroix@gmail.com</a>
 			</div>
 
 			<div class="coord_gerant">
 			  <div class="nom_gerant">François Pepere</div>
-			  <div class="contact-details">Téléphone : <u>+ 33 7 92 93 23 36</u></div>
+			  <div class="contact-details">Telephone : <u>+ 33 7 92 93 23 36</u></div>
 				Email : 
 			  <a href="mailto:francois.pepere@gmail.com">francois.pepere@gmail.com</a>
 			</div>

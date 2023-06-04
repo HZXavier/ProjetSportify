@@ -65,15 +65,15 @@
     </form>
 
      <?php
-    // Informations de connexion à la base de données
+    // Informations de connexion à la base de donnees
     $baseDeDonnees = "fitness";
 
-    // Connexion à la base de données
+    // Connexion à la base de donnees
     $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
-    // Vérifier la connexion
+    // Verifier la connexion
     if (!$connexion) {
-        die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+        die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
     }
     if ($_SESSION['profil'] === 'admin') {
 
@@ -92,7 +92,7 @@
         //coach
 
         if ($userType == 'coach') {
-            $requete = "INSERT INTO coach (Id_Coach, Nom, Prénom, Mail, Mdp, Téléphone) VALUES ('', '$nom', '$prenom', '$mail', '$mdp', '$telephone')";
+            $requete = "INSERT INTO coach (Id_Coach, Nom, Prenom, Mail, Mdp, Telephone) VALUES ('', '$nom', '$prenom', '$mail', '$mdp', '$telephone')";
             echo 'après sql';
 
             $resultat = mysqli_query($connexion, $requete);
@@ -100,14 +100,14 @@
             if ($resultat) {
                 echo 'BIENVENUE $prenom';
             } else {
-                echo 'Échec de l\'insertion des données du coach : ' . mysqli_error($connexion);
+                echo 'echec de l\'insertion des donnees du coach : ' . mysqli_error($connexion);
             }
         }
     }
     }
 
      else {
-        echo "Le formulaire n'a pas été soumis.";
+        echo "Le formulaire n'a pas ete soumis.";
     }
 
     mysqli_close($connexion);

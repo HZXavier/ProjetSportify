@@ -16,7 +16,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
-        die("La connexion à la base de données a échoué : " . $conn->connect_error);
+        die("La connexion à la base de donnees a echoue : " . $conn->connect_error);
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,7 +35,7 @@
                 VALUES ('', '$nom', '$prenom', '$email', '$mdp', '$adresse', '$carteEtd', $codePostal, '$ville', '$pays')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Inscription réussie !";
+            echo "Inscription reussie !";
         } else {
             echo "Erreur lors de l'inscription : " . $conn->error;
         }
@@ -60,7 +60,7 @@
         <label for="adresse">Adresse:</label>
         <input type="text" name="adresse" required><br><br>
 
-        <label for="carte_etd">Carte étudiante:</label>
+        <label for="carte_etd">Carte etudiante:</label>
         <input type="text" name="carte_etd"><br><br>
 
         <label for="code_postal">Code postal:</label>
