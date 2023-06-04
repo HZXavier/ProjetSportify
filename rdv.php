@@ -1,27 +1,20 @@
 <?php
 session_start(); 
-// Informations de connexion à la base de donnees
 $baseDeDonnees = "fitness";
-
-// Connexion à la base de donnees
 $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
-
-// Verifier la connexion
 if (!$connexion) {
     die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
     echo "non";
 }
 
-// ID du coach
 $idCoach = $_GET['info'];
 $idclient=$_SESSION['client']['Id_Client'];
 
-// Verification du formulaire soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POST["heure"])) {
     $jour = $_POST["jour"];
     $heure = $_POST["heure"];
 
-    // Verification de la disponibilite du creneau
+    // Verif de la dispo du creneau
     $requeteVerif = "SELECT Occupe FROM planning WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
     $resultatVerif = mysqli_query($connexion, $requeteVerif);
     if (mysqli_num_rows($resultatVerif) > 0) {
@@ -29,23 +22,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POS
         $occupe = $creneau['Occupe'];
 
         if (!$occupe) {
-                // Mettre à jour le créneau avec l'ID du client
+                // Mettre à jour créneau avec ID client
                 $requeteReservation = "UPDATE planning SET Occupe = 1, Id_Client = $idclient WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
                 mysqli_query($connexion, $requeteReservation);
             } else {
-                // Annuler le rendez-vous
+                // Annuler rdv
                 $requeteAnnulation = "UPDATE planning SET Occupe = 0, Id_Client = NULL WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
                 mysqli_query($connexion, $requeteAnnulation);
             }
     }
 }
 
-// Requête pour recuperer le planning du coach
+// Requête pr rqpr planning coach
 $requete = "SELECT * FROM planning WHERE Id_Coach = $idCoach";
 $resultat = mysqli_query($connexion, $requete);
 
 if (mysqli_num_rows($resultat) > 0) {
-    // Recuperation des jours distincts
+    // Recuperation jours distincts
     $jours = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
         $jour = $creneau['Jour'];
@@ -54,7 +47,7 @@ if (mysqli_num_rows($resultat) > 0) {
         }
     }
 
-    // Recuperation des heures de debut et de fin distinctes
+    // Recuperation heures debut et fin distinctes
     mysqli_data_seek($resultat, 0); // Reinitialiser le pointeur du resultat
     $heures = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
@@ -66,24 +59,21 @@ if (mysqli_num_rows($resultat) > 0) {
     }
 
 
-    // Affichage du tableau
+    // Affichage tableau
     echo "<table border='1'>";
     echo "<tr>";
-    echo "<th></th>"; // Cellule vide en haut à gauche
+    echo "<th></th>";
 
-    // En-tête des colonnes avec les jours
     foreach ($jours as $jour) {
         echo "<th>$jour</th>";
     }
     echo "</tr>";
 
-    // Lignes du tableau avec les heures de debut et de fin
     foreach ($heures as $heureDebut => $heureFin) {
         echo "<th>$heureDebut - $heureFin</th>";
 
-        // Cellules avec l'occupation
         foreach ($jours as $jour) {
-            mysqli_data_seek($resultat, 0); // Reinitialiser le pointeur du resultat
+            mysqli_data_seek($resultat, 0); // Reinitialiser pointeur resultat
             $occupe = false;
             while ($creneau = mysqli_fetch_assoc($resultat)) {
                 if ($creneau['Jour'] == $jour && $creneau['Heure_Debut'] == $heureDebut) {
@@ -99,7 +89,6 @@ if (mysqli_num_rows($resultat) > 0) {
             }
         }
     
-
         echo "</tr>";
     }
 
@@ -115,7 +104,7 @@ function prendreRendezVous(jour, heure) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                location.reload(); // Actualiser la page après la reservation
+                location.reload();
             }
         };
         xhttp.open("POST", "", true);
@@ -129,7 +118,7 @@ function annulerRendezVous(jour, heure) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                location.reload(); // Actualiser la page après l'annulation
+                location.reload();
             }
         };
         xhttp.open("POST", "", true);
