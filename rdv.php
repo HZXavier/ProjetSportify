@@ -13,7 +13,8 @@ if (!$connexion) {
 }
 
 // ID du coach
-$idCoach = $_GET['info']; 
+$idCoach = $_GET['info'];
+$idclient=$_SESSION['client']['Id_Client'];
 
 // Verification du formulaire soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POST["heure"])) {
@@ -28,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POS
         $occupe = $creneau['Occupe'];
 
         if (!$occupe) {
-            // Mettre à jour le creneau
-            $requeteMiseAJour = "UPDATE planning SET Occupe = 1 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
-            mysqli_query($connexion, $requeteMiseAJour);
-        } else {
-            // Annuler le rendez-vous
-            $requeteAnnulation = "UPDATE planning SET Occupe = 0 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
-            mysqli_query($connexion, $requeteAnnulation);
-        }
+                // Mettre à jour le créneau avec l'ID du client
+                $requeteReservation = "UPDATE planning SET Occupe = 1, Id_Client = $idclient WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
+                mysqli_query($connexion, $requeteReservation);
+            } else {
+                // Annuler le rendez-vous
+                $requeteAnnulation = "UPDATE planning SET Occupe = 0, Id_Client = NULL WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
+                mysqli_query($connexion, $requeteAnnulation);
+            }
     }
 }
 
