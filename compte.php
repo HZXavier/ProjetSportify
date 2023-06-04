@@ -81,7 +81,6 @@
             $resultat = mysqli_query($connexion, $requete_connexion);
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on cree la session coach
                 $requete_recup = "SELECT DISTINCT * FROM coach;";
                 $result = mysqli_query($connexion, $requete_recup);
                 while ($data = mysqli_fetch_assoc($result)) {
@@ -90,8 +89,6 @@
                     $_SESSION['coach']['Nom'] = $data['Nom'];
                     $_SESSION['coach']['Prenom'] = $data['Prenom'];
                 }
-
-                // Redirection vers la page reservee aux coachs
                 exit();
             }
             echo "Vous n'êtes pas enregistre dans la base de donnees des coachs.";
@@ -101,16 +98,11 @@
         if ($userType == 'client') {
             $_SESSION['profil'][''] = 'client';
            $requete = "SELECT * FROM client WHERE Mail LIKE '".$mail."' AND Nom LIKE '".$nom."' AND Prenom LIKE '".$prenom."'";
-
             $resultat = mysqli_query($connexion, $requete);
-
-
             if ($resultat === false) {
-                // Afficher l'erreur de requête
                 echo "Erreur de requête : " . mysqli_error($connexion);
                 exit();
             }
-
 
             if (mysqli_num_rows($resultat) > 0) {
                 $requete_recup = "SELECT DISTINCT * FROM client;";
@@ -124,8 +116,6 @@
                     print_r($_SESSION['client']);
                     echo '</pre>';
                 }
-
-                // Redirection vers la page reservee aux clients
                 exit();
             }
             echo "Vous n'êtes pas enregistre dans la base de donnees des clients.";
@@ -138,7 +128,6 @@
             $resultat = mysqli_query($connexion, $requete);
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on cree la session administrateur
                 $requete_recup = "SELECT DISTINCT * FROM administrateur;";
                 $result = mysqli_query($connexion, $requete_recup);
                 while ($data = mysqli_fetch_assoc($result)) {
@@ -147,15 +136,11 @@
                     $_SESSION['administrateur']['Nom'] = $data['Nom'];
                     $_SESSION['administrateur']['Prenom'] = $data['Prenom'];
                 }
-
-                // Redirection vers la page reservee aux administrateurs
                 exit();
             }
             echo "Vous n'êtes pas enregistre dans la base de donnees des administrateurs.";
         }
     }
-
-   
 
     ?>
 
