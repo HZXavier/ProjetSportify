@@ -79,6 +79,7 @@ En conclusion, le football presente de nombreux bienfaits pour la sante physique
         <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      <li> <button onclick="openProfile('cv_ragnar.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
          RAGNAR BRETON<br><br>
@@ -150,6 +151,7 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
         <li><a href="rdv.php?info=2">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li> <button onclick="openProfile('cv_florent.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;"><br>
 FLORENT MANAUDOU<br>
@@ -219,6 +221,7 @@ Enfin, le tennis est un excellent moyen de reduire le stress et de favoriser le 
         <li><a href="rdv.php?info=3">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li> <button onclick="openProfile('cv_pierre.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">PIERRE MÈNES<br><br>
 Coach de Tennis | 56 ans<br>
@@ -287,6 +290,7 @@ En conclusion, le basketball offre une multitude de bienfaits pour la sante phys
         <li><a href="rdv.php?info=4">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_tanguy.xml')">CV </button></li
       </nav>
       <p style="text-align: justify;">TANGUY INDIE<br><br>
 Coach Basketball | 14 ans<br>
@@ -338,6 +342,7 @@ COMPeTENCES<br><br>
         <li><a href="rdv.php?info=5">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_romain.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">ROMAIN PETIT<br><br>
 Coach plongeon | 33 ans<br>
@@ -406,6 +411,7 @@ En conclusion, le rugby offre une multitude de bienfaits pour la sante physique 
         <li><a href="rdv.php?info=6">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	<li><button onclick="openProfile('cv_chabal.xml')">CV </button></li>
       </nav>
 
       
@@ -466,6 +472,10 @@ LANGUES:<br><BR>
         volet.style.display = "none";
         titreVolet.style.fontWeight = "normal";
       }
+    }
+	  
+	  function openProfile(xmlFile) {
+      window.open(xmlFile, '_blank');
     }
   </script>
 
