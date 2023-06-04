@@ -6,39 +6,6 @@
 <body>
     <h2>Inscription Client</h2>
 
-    <?php
-    session_start(); 
-    $baseDeDonnees = "fitness";
-    $conn = new mysqli('localhost', 'root', '', $baseDeDonnees);
-    if ($conn->connect_error) {
-        die("La connexion à la base de donnees a echoue : " . $conn->connect_error);
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        $email = $_POST["email"];
-        $mdp = $_POST["mdp"];
-        $adresse = $_POST["adresse"];
-        $carteEtd = $_POST["carte_etd"];
-        $codePostal = $_POST["code_postal"];
-        $ville = $_POST["ville"];
-        $pays = $_POST["pays"];
-
-        $sql = "INSERT INTO Client (Id_Client, Nom, Prenom, Mail, Mdp, Adresse, Carte_Etd, Code_Postal, Ville, Pays)
-                VALUES ('', '$nom', '$prenom', '$email', '$mdp', '$adresse', '$carteEtd', $codePostal, '$ville', '$pays')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Inscription reussie !";
-        } else {
-            echo "Erreur lors de l'inscription : " . $conn->error;
-        }
-    }
-
-    $conn->close();
-    ?>
-
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required><br><br>
@@ -68,6 +35,39 @@
         <input type="text" name="pays" required><br><br>
 
         <input type="submit" value="S'inscrire">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     </form>
+    <?php
+    session_start(); 
+    $baseDeDonnees = "fitness";
+    $connexion = new mysqli('localhost', 'root', '', $baseDeDonnees);
+    if ($connexion->connect_error) {
+        die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $Nom = $_POST["nom"];
+        $Prenom = $_POST["prenom"];
+        $Mail = $_POST["email"];
+        $Mdp = $_POST["mdp"];
+        $Adresse = $_POST["adresse"];
+        $Carte_Etd = $_POST["carte_etd"];
+        $Code_Postal = $_POST["code_postal"];
+        $Ville = $_POST["ville"];
+        $Pays = $_POST["pays"];
+
+        $sql = "INSERT INTO client (Id_Client, Nom, Prenom, Mail, Mdp, Adresse, Carte_Etd, Code_Postal, Ville, Pays)
+                VALUES ('', '$Nom', '$Prenom', '$Mail', '$Mdp', '$Adresse', '$Carte_Etd', $Code_Postal, '$Ville', '$Pays')";
+
+        if ($connexion->query($sql) === TRUE) {
+            echo "Inscription réussie !";
+        } else {
+            echo "Erreur lors de l'inscription : " . $connexion->error;
+        }
+    }
+    ?>
+    <br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

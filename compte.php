@@ -59,89 +59,16 @@
       <button type="submit">Se connecter</button>
     </form>
 
+    <form method="POST" action="inscription_client.php">
+    <button type="submit">Inscription</button>
+    </form>
+
+
     <?php
     $baseDeDonnees = "fitness";
     $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
-    if (!$connexion) {
-        die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $userType = $_POST["user_type"];
-        echo $userType ;
-        $mail = $_POST["mail"];
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-
-        // Coach
-        if ($userType == 'coach') {
-            $_SESSION['profil'] = 'coach';
-            $requete_connexion = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prenom = '$prenom'";
-            $resultat = mysqli_query($connexion, $requete_connexion);
-
-            if (mysqli_num_rows($resultat) > 0) {
-                $requete_recup = "SELECT DISTINCT * FROM coach;";
-                $result = mysqli_query($connexion, $requete_recup);
-                while ($data = mysqli_fetch_assoc($result)) {
-                    $_SESSION['coach']['Id_Coach'] = $data['Id_Coach'];
-                    $_SESSION['coach']['Mail'] = $data['Mail'];
-                    $_SESSION['coach']['Nom'] = $data['Nom'];
-                    $_SESSION['coach']['Prenom'] = $data['Prenom'];
-                }
-                exit();
-            }
-            echo "Vous n'êtes pas enregistre dans la base de donnees des coachs.";
-        }
-
-        // Client
-        if ($userType == 'client') {
-            $_SESSION['profil'][''] = 'client';
-           $requete = "SELECT * FROM client WHERE Mail LIKE '".$mail."' AND Nom LIKE '".$nom."' AND Prenom LIKE '".$prenom."'";
-            $resultat = mysqli_query($connexion, $requete);
-            if ($resultat === false) {
-                echo "Erreur de requête : " . mysqli_error($connexion);
-                exit();
-            }
-
-            if (mysqli_num_rows($resultat) > 0) {
-                $requete_recup = "SELECT DISTINCT * FROM client;";
-                $result = mysqli_query($connexion, $requete_recup);
-                if ($data = mysqli_fetch_assoc($result)) {
-                    $_SESSION['client']['Id_Client'] = $data['Id_Client'];
-                    $_SESSION['client']['Mail'] = $data['Mail'];
-                    $_SESSION['client']['Nom'] = $data['Nom'];
-                    $_SESSION['client']['Prenom'] = $data['Prenom'];
-                    echo '<pre>';
-                    print_r($_SESSION['client']);
-                    echo '</pre>';
-                }
-                exit();
-            }
-            echo "Vous n'êtes pas enregistre dans la base de donnees des clients.";
-        }
-
-        // Administrateur
-        if ($userType == 'administrateur') {
-            $_SESSION['profil'][''] = 'administrateur';
-            $requete = "SELECT * FROM administrateur WHERE Mail = '$mail' AND Nom = '$nom' AND Prenom = '$prenom'";
-            $resultat = mysqli_query($connexion, $requete);
-
-            if (mysqli_num_rows($resultat) > 0) {
-                $requete_recup = "SELECT DISTINCT * FROM administrateur;";
-                $result = mysqli_query($connexion, $requete_recup);
-                while ($data = mysqli_fetch_assoc($result)) {
-                    $_SESSION['administrateur']['Id_Admin'] = $data['Id_Admin'];
-                    $_SESSION['administrateur']['Mail'] = $data['Mail'];
-                    $_SESSION['administrateur']['Nom'] = $data['Nom'];
-                    $_SESSION['administrateur']['Prenom'] = $data['Prenom'];
-                }
-                exit();
-            }
-            echo "Vous n'êtes pas enregistre dans la base de donnees des administrateurs.";
-        }
-    }
-
+    // ...
     ?>
 
   </div>
