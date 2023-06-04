@@ -56,18 +56,15 @@ if (mysqli_num_rows($resultat) > 0) {
 
     // Recuperation des heures de debut et de fin distinctes
     mysqli_data_seek($resultat, 0); // Reinitialiser le pointeur du resultat
-    $heuresDebut = array();
-    $heuresFin = array();
+    $heures = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
         $heureDebut = $creneau['Heure_Debut'];
         $heureFin = $creneau['Heure_Fin'];
-        if (!in_array($heureDebut, $heuresDebut)) {
-            array_push($heuresDebut, $heureDebut);
-        }
-        if (!in_array($heureFin, $heuresFin)) {
-            array_push($heuresFin, $heureFin);
+        if (!isset($heures[$heureDebut])) {
+            $heures[$heureDebut] = $heureFin;
         }
     }
+
 
     // Affichage du tableau
     echo "<table border='1'>";
@@ -81,9 +78,8 @@ if (mysqli_num_rows($resultat) > 0) {
     echo "</tr>";
 
     // Lignes du tableau avec les heures de debut et de fin
-    foreach ($heuresDebut as $heureDebut) {
-        echo "<tr>";
-        echo "<th>$heureDebut - " . $heuresFin[0] . "</th>";
+    foreach ($heures as $heureDebut => $heureFin) {
+        echo "<th>$heureDebut - $heureFin</th>";
 
         // Cellules avec l'occupation
         foreach ($jours as $jour) {
@@ -101,8 +97,9 @@ if (mysqli_num_rows($resultat) > 0) {
             } else {
                 echo "<td>$occupation<br/><button onclick='annulerRendezVous(\"$jour\", \"$heureDebut\")'>Annuler</button></td>";
             }
-
         }
+    
+
         echo "</tr>";
     }
 
