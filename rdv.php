@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 // Informations de connexion à la base de données
 $baseDeDonnees = "fitness";
 
