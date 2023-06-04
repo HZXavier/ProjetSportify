@@ -8,12 +8,9 @@
 
     <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
     $dbname = "Fitness";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli('localhost', 'root', '', $dbname);
 
     if ($conn->connect_error) {
         die("La connexion à la base de donnees a echoue : " . $conn->connect_error);
