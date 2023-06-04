@@ -79,6 +79,7 @@ En conclusion, le football presente de nombreux bienfaits pour la sante physique
         <li><a href="rdv.php?info=1">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      <li> <button onclick="openProfile('cv_ragnar.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
         <?php 
@@ -171,6 +172,7 @@ En conclusion, la natation est un sport complet qui offre de nombreux bienfaits 
         <li><a href="rdv.php?info=2">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      <li> <button onclick="openProfile('cv_florent.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;"><br>
 <?php 
@@ -260,6 +262,7 @@ Enfin, le tennis est un excellent moyen de reduire le stress et de favoriser le 
         <li><a href="rdv.php?info=3">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      <li> <button onclick="openProfile('cv_pierre.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
         <?php 
@@ -350,6 +353,7 @@ En conclusion, le basketball offre une multitude de bienfaits pour la sante phys
         <li><a href="rdv.php?info=4">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	       <li><button onclick="openProfile('cv_tanguy.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
         <?php 
@@ -423,6 +427,7 @@ COMPeTENCES<br><br>
         <li><a href="rdv.php?info=5">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      <li><button onclick="openProfile('cv_romain.xml')">CV </button></li>
       </nav>
       <p style="text-align: justify;">
         <?php 
@@ -513,6 +518,8 @@ En conclusion, le rugby offre une multitude de bienfaits pour la sante physique 
         <li><a href="rdv.php?info=6">PRENDRE RENDEZ-VOUS</a></li>
         <li><a onclick="retourPagePrecedente()" style="cursor: pointer;">RETOUR </a></li>
         <li><a href="discuter.php">DISCUTER</a></li>
+	      
+	      <li><button onclick="openProfile('cv_chabal.xml')">CV </button></li>
       </nav>
 
       
@@ -594,6 +601,9 @@ LANGUES:<br><BR>
         volet.style.display = "none";
         titreVolet.style.fontWeight = "normal";
       }
+    }
+	  function openProfile(xmlFile) {
+      window.open(xmlFile, '_blank');
     }
   </script>
 
