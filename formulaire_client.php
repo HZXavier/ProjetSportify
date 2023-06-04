@@ -4,17 +4,13 @@
     <meta charset="utf-8">
     <link href="tennis.css" rel="stylesheet" type="text/css" />
     <?php
-    // Informations de connexion à la base de donnees
-    $servername = "localhost";
-    $username = "nom_utilisateur";
-    $password = "mot_de_passe";
-    $database = "fitness";
-
-
-    //connexion à la base de donnees
-    $db_handle =mysqli_connect($servername, $username, $password, $database);
-    //verifier si la base de donnees existe
-    $db_found =mysqli_select_db($db_handle, $database);
+    session_start(); 
+    $baseDeDonnees = "fitness";
+    $conn = new mysqli('localhost', 'root', '', $baseDeDonnees);
+    if (!$connexion) {
+    die("Erreur de connexion à la base de donnees : " . mysqli_connect_error());
+    echo "non";
+}
     ?>
 </head>
 
@@ -52,7 +48,7 @@
         <div id="identification">
             <?php
             if (isset($_POST['submit_form'])) {
-                // Recuperer les valeurs du formulaire
+                // rqpr valeurs du formulaire
                 $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
                 $date_naissance = date('Y-m-d');
@@ -61,9 +57,6 @@
                 $info_paiement = $_POST['info_paiement'];
 
                 
-							
-
-                // Autres operations à effectuer avec les donnees
             } else {
                 echo "<p>Aucune donnee n'a ete soumise.</p>";
             }
