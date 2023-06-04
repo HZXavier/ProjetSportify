@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>COMPTE</title>
@@ -16,12 +17,13 @@
       <div class="line" style="height: 3px; background-color: darkblue;"></div>
       <br><br>
     </header>
-    <?php     session_start(); 
+    <?php
+    session_start(); 
+    //echo '<br><br>BIENVENUE '.$_SESSION['client']['Prenom'];
     if (isset($_SESSION['profil'])) {
-        echo 'qqun est co';        
-    }
-    else{
-        echo 'personne n\'est co';
+        echo '<br><br>BIENVENUE '.$_SESSION['client']['Prenom'];
+    } else {
+        echo 'personne n\'est connecté';
     }
     ?>
 
@@ -29,17 +31,17 @@
         <li><a href="accueil.php">Accueil</a></li>
         <li><a href="parcourir.php">Tout Parcourir</a></li>
         <li><a href="recherche.php">Recherche</a></li>
-        <!--que les clients-->
-        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'client'): ?>
+        <!-- Seulement pour les clients -->
+        <?php if (isset($_SESSION['profil']['']) && $_SESSION['profil'][''] === 'client'): ?>
         <li><a href="rendez_vous.php">Rendez-vous</a></li>
         <?php endif ?>
-        <!--que si personne n'est co-->
+        <!-- Seulement si personne n'est connecté -->
         <li><a href="compte.php">Votre Compte</a></li>
-        <?php if (isset($_SESSION['profil']) && $_SESSION['profil'] === 'admin'): ?>
+        <?php if (isset($_SESSION['profil']['']) && $_SESSION['profil'][''] === 'administrateur'): ?>
         <li><a href="ajouter.php">Inscrire</a></li>        
         <li><a href="supprimer.php">Supprimer</a></li>
             <?php endif ?>
-        <li><a href="deconnexion.php">SE DECO</a></li>
+        <li><a href="deconnexion.php">SE DECONNECTER</a></li>
       <br><br><br>
       <div class="line" style="height: 4px; background-color: darkblue;"></div><br><br>
     </nav>
@@ -47,21 +49,20 @@
     <p>VOTRE COMPTE</p><br><br><br>
 
     <form method="POST" action="compte.php">
-      <choix_id style="display: flex; justify-content: center;">
+      <div style="display: flex; justify-content: center;">
           <input type="radio" name="user_type" value="client" required>Client&nbsp;&nbsp;&nbsp;
           <input type="radio" name="user_type" value="coach" required>Coach&nbsp;&nbsp;&nbsp;
           <input type="radio" name="user_type" value="admin" required>Administrateur
-      </choix_id><br><br>
+      </div><br><br>
       <input type="text" name="nom" placeholder="Nom :">
       <input type="text" name="prenom" placeholder="Prenom :">
       <input type="mail" name="mail" placeholder="Mail :">
       <button type="submit">Se connecter</button>
     </form>
 
-        <?php
-
+    <?php
     $baseDeDonnees = "fitness";
-    $connexion = mysqli_connect('localhost', 'root', '',$baseDeDonnees);
+    $connexion = mysqli_connect('localhost', 'root', '', $baseDeDonnees);
 
     if (!$connexion) {
         die("Erreur de connexion à la base de données : " . mysqli_connect_error());
@@ -69,24 +70,27 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userType = $_POST["user_type"];
+        echo $userType ;
         $mail = $_POST["mail"];
         $nom = $_POST["nom"];
         $prenom = $_POST["prenom"];
 
-        // coach
-        if($userType == 'coach'){
+        // Coach
+        if ($userType == 'coach') {
             $_SESSION['profil'] = 'coach';
-            $requete = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
-            $resultat = mysqli_query($connexion, $requete);
+            $requete_connexion = "SELECT * FROM coach WHERE Mail = '$mail' AND Nom = '$nom' AND Prenom = '$prenom'";
+            $resultat = mysqli_query($connexion, $requete_connexion);
 
             if (mysqli_num_rows($resultat) > 0) {
                 // Les champs correspondent, on crée la session coach
-                $coach = mysqli_fetch_assoc($resultat);
-                $_SESSION["Coach"] = true;
-                $_SESSION["Mail"] = $mail;
-                $_SESSION["Nom"] = $nom;
-                $_SESSION["Prenom"] = $prenom;
-                
+                $requete_recup = "SELECT DISTINCT * FROM coach;";
+                $result = mysqli_query($connexion, $requete_recup);
+                while ($data = mysqli_fetch_assoc($result)) {
+                    $_SESSION['coach']['Id_Coach'] = $data['Id_Coach'];
+                    $_SESSION['coach']['Mail'] = $data['Mail'];
+                    $_SESSION['coach']['Nom'] = $data['Nom'];
+                    $_SESSION['coach']['Prenom'] = $data['Prenom'];
+                }
 
                 // Redirection vers la page réservée aux coachs
                 exit();
@@ -94,69 +98,74 @@
             echo "Vous n'êtes pas enregistré dans la base de données des coachs.";
         }
 
-        //client
-        if($userType == 'client'){
-            $_SESSION['profil'] = 'client';
-            $requete = "SELECT * FROM client WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
+        // Client
+        if ($userType == 'client') {
+            $_SESSION['profil'][''] = 'client';
+           $requete = "SELECT * FROM client WHERE Mail LIKE '".$mail."' AND Nom LIKE '".$nom."' AND Prenom LIKE '".$prenom."'";
+
             $resultat = mysqli_query($connexion, $requete);
 
+
+            if ($resultat === false) {
+                // Afficher l'erreur de requête
+                echo "Erreur de requête : " . mysqli_error($connexion);
+                exit();
+            }
+
+
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on crée la session coach
-                $coach = mysqli_fetch_assoc($resultat);
-                $_SESSION["Coach"] = true;
-                $_SESSION["Mail"] = $mail;
-                $_SESSION["Nom"] = $nom;
-                $_SESSION["Prenom"] = $prenom;
-                
-                
+                // Les champs correspondent, on crée la session client
+                $requete_recup = "SELECT DISTINCT * FROM client;";
+                $result = mysqli_query($connexion, $requete_recup);
+                if ($data = mysqli_fetch_assoc($result)) {
+                    $_SESSION['client']['Id_Client'] = $data['Id_Client'];
+                    $_SESSION['client']['Mail'] = $data['Mail'];
+                    $_SESSION['client']['Nom'] = $data['Nom'];
+                    $_SESSION['client']['Prenom'] = $data['Prenom'];
+                    // Vérification des informations de session
+                    echo '<pre>';
+                    print_r($_SESSION['client']);
+                    echo '</pre>';
+                }
+
                 // Redirection vers la page réservée aux clients
                 exit();
             }
             echo "Vous n'êtes pas enregistré dans la base de données des clients.";
         }
 
-        //admin
-        if($userType == 'admin'){
-            $_SESSION['profil'] = 'admin';
-            $requete = "SELECT * FROM administrateur
-             WHERE Mail = '$mail' AND Nom = '$nom' AND Prénom = '$prenom'";
+        // Administrateur
+        if ($userType == 'administrateur') {
+            $_SESSION['profil'][''] = 'administrateur';
+            $requete = "SELECT * FROM administrateur WHERE Mail = '$mail' AND Nom = '$nom' AND Prenom = '$prenom'";
             $resultat = mysqli_query($connexion, $requete);
 
             if (mysqli_num_rows($resultat) > 0) {
-                // Les champs correspondent, on crée la session coach
-                $coach = mysqli_fetch_assoc($resultat);
-                $_SESSION["Coach"] = true;
-                $_SESSION["Mail"] = $mail;
-                $_SESSION["Nom"] = $nom;
-                $_SESSION["Prenom"] = $prenom;
-                
-                
-                // Redirection vers la page réservée aux clients
+                // Les champs correspondent, on crée la session administrateur
+                $requete_recup = "SELECT DISTINCT * FROM administrateur;";
+                $result = mysqli_query($connexion, $requete_recup);
+                while ($data = mysqli_fetch_assoc($result)) {
+                    $_SESSION['administrateur']['Id_Admin'] = $data['Id_Admin'];
+                    $_SESSION['administrateur']['Mail'] = $data['Mail'];
+                    $_SESSION['administrateur']['Nom'] = $data['Nom'];
+                    $_SESSION['administrateur']['Prenom'] = $data['Prenom'];
+                }
+
+                // Redirection vers la page réservée aux administrateurs
                 exit();
             }
             echo "Vous n'êtes pas enregistré dans la base de données des administrateurs.";
         }
-
     }
 
-    else{
-        echo "marche pas";
-    }
-    mysqli_close($connexion);
+   
+
     ?>
 
+  </div>
 
-
-    <br><br>
-    <footer class="footer">
-      <p1>Nous contacter :<br><u>+33 6 61 48 19 96</u>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 
-        <a href="mailto:xavier.heitz@edu.ece.fr">xavier.heitz@edu.ece.fr</a>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-        <a href="https://maps.google.com/maps?q=66 rue des Champarons, 92700, Colombes" target="_blank">
-        66 rue des Champarons, 92700, Colombes</a><br>
-        &copy;2023 Sportify</p1>
-    </footer>
-
-    </div>
-
+  <footer>
+    <p style="text-align: center; font-size: 10pt;">© 2023 Sportify - Tous droits réservés</p>
+  </footer>
 </body>
 </html>

@@ -31,7 +31,7 @@
         $ville = $_POST["ville"];
         $pays = $_POST["pays"];
 
-        $sql = "INSERT INTO Client (Id_Client, Nom, Prénom, Mail, Mdp, Adresse, Carte_Etd, Code_Postal, Ville, Pays)
+        $sql = "INSERT INTO Client (Id_Client, Nom, Prenom, Mail, Mdp, Adresse, Carte_Etd, Code_Postal, Ville, Pays)
                 VALUES ('', '$nom', '$prenom', '$email', '$mdp', '$adresse', '$carteEtd', $codePostal, '$ville', '$pays')";
 
         if ($conn->query($sql) === TRUE) {
@@ -48,7 +48,7 @@
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required><br><br>
 
-        <label for="prenom">Prénom:</label>
+        <label for="prenom">Prenom:</label>
         <input type="text" name="prenom" required><br><br>
 
         <label for="email">E-mail:</label>

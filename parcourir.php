@@ -18,8 +18,9 @@
       <br><br>
     </header>
     <?php     session_start(); 
-    if (isset($_SESSION['profil'])) {
-        echo 'qqun est co';        
+    if (isset($_SESSION['client'])) {
+        echo 'qqun est co';  
+        echo $_SESSION['client']['Prenom']; 
     }
     else{
         echo 'personne n\'est co';

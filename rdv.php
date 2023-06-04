@@ -21,19 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jour"]) && isset($_POS
     $heure = $_POST["heure"];
 
     // Vérification de la disponibilité du créneau
-    $requeteVerif = "SELECT Occupé FROM planning WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+    $requeteVerif = "SELECT Occupe FROM planning WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
     $resultatVerif = mysqli_query($connexion, $requeteVerif);
     if (mysqli_num_rows($resultatVerif) > 0) {
         $creneau = mysqli_fetch_assoc($resultatVerif);
-        $occupe = $creneau['Occupé'];
+        $occupe = $creneau['Occupe'];
 
         if (!$occupe) {
             // Mettre à jour le créneau
-            $requeteMiseAJour = "UPDATE planning SET Occupé = 1 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+            $requeteMiseAJour = "UPDATE planning SET Occupe = 1 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
             mysqli_query($connexion, $requeteMiseAJour);
         } else {
             // Annuler le rendez-vous
-            $requeteAnnulation = "UPDATE planning SET Occupé = 0 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Début = '$heure'";
+            $requeteAnnulation = "UPDATE planning SET Occupe = 0 WHERE Id_Coach = $idCoach AND Jour = '$jour' AND Heure_Debut = '$heure'";
             mysqli_query($connexion, $requeteAnnulation);
         }
     }
@@ -58,7 +58,7 @@ if (mysqli_num_rows($resultat) > 0) {
     $heuresDebut = array();
     $heuresFin = array();
     while ($creneau = mysqli_fetch_assoc($resultat)) {
-        $heureDebut = $creneau['Heure_Début'];
+        $heureDebut = $creneau['Heure_Debut'];
         $heureFin = $creneau['Heure_Fin'];
         if (!in_array($heureDebut, $heuresDebut)) {
             array_push($heuresDebut, $heureDebut);
@@ -89,12 +89,12 @@ if (mysqli_num_rows($resultat) > 0) {
             mysqli_data_seek($resultat, 0); // Réinitialiser le pointeur du résultat
             $occupe = false;
             while ($creneau = mysqli_fetch_assoc($resultat)) {
-                if ($creneau['Jour'] == $jour && $creneau['Heure_Début'] == $heureDebut) {
-                    $occupe = $creneau['Occupé'];
+                if ($creneau['Jour'] == $jour && $creneau['Heure_Debut'] == $heureDebut) {
+                    $occupe = $creneau['Occupe'];
                     break;
                 }
             }
-            $occupation = $occupe ? "Occupé" : "Libre";
+            $occupation = $occupe ? "Occupe" : "Libre";
             if (!$occupe) {
                 echo "<td><button onclick='prendreRendezVous(\"$jour\", \"$heureDebut\")'>Réserver</button></td>";
             } else {
